@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "Emergency Department",
+    "category": "Facility",
+    "description": "State-of-the-art emergency facilities with advanced monitoring systems",
+    "type": "image",
+    "image": "/gallery/emergency-dept.png"
+  },
+  {
+    "id": 2,
+    "title": "Surgical Suite",
+    "category": "Facility",
+    "description": "Modern operating rooms equipped with latest surgical technology",
+    "type": "image",
+    "image": "/gallery/surgical-suite.png"
+  },
+  {
+    "id": 3,
+    "title": "Patient Recovery Ward",
+    "category": "Facility",
+    "description": "Comfortable and well-equipped patient recovery area",
+    "type": "image",
+    "image": "/gallery/recovery-ward.png"
+  },
+  {
+    "id": 4,
+    "title": "Medical Laboratory",
+    "category": "Facility",
+    "description": "Advanced diagnostic laboratory with latest testing equipment",
+    "type": "image",
+    "image": "/gallery/laboratory.png"
+  },
+  {
+    "id": 5,
+    "title": "Pediatric Center",
+    "category": "Facility",
+    "description": "Specialized pediatric care with child-friendly environment",
+    "type": "image",
+    "image": "/gallery/pediatric.png"
+  },
+  {
+    "id": 6,
+    "title": "Radiology Department",
+    "category": "Facility",
+    "description": "Advanced imaging center with CT, MRI, and X-ray capabilities",
+    "type": "image",
+    "image": "/gallery/radiology.png"
+  },
+  {
+    "id": 7,
+    "title": "Team Meeting",
+    "category": "Team",
+    "description": "Our dedicated medical professionals in collaboration",
+    "type": "image",
+    "image": "/gallery/team-meeting.png"
+  },
+  {
+    "id": 8,
+    "title": "Patient Care",
+    "category": "Team",
+    "description": "Healthcare workers providing compassionate patient care",
+    "type": "image",
+    "image": "/gallery/patient-care.png"
+  },
+  {
+    "id": 9,
+    "title": "Virtual Tour: Emergency Department",
+    "category": "Video",
+    "description": "Take a virtual tour of our modern emergency department",
+    "type": "video",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    "id": 10,
+    "title": "Patient Testimonial",
+    "category": "Video",
+    "description": "Hear from one of our satisfied patients about their experience",
+    "type": "video",
+    "videoUrl": "https://www.youtube.com/embed/9bZkp7q19f0"
+  },
+  {
+    "id": 11,
+    "title": "Meet Our Medical Team",
+    "category": "Video",
+    "description": "Introduction to our world-class medical professionals",
+    "type": "video",
+    "videoUrl": "https://www.youtube.com/embed/jNQXAC9IVRw"
+  }
+]

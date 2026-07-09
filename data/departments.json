@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "en": "Emergency Medicine",
+    "ru": "Экстренная медицина",
+    "uz": "Shoshilinch Tibbiyot",
+    "icon": "FiTruck"
+  },
+  {
+    "id": 2,
+    "en": "Intensive Care Unit",
+    "ru": "Отделение интенсивной терапии",
+    "uz": "Intensiv Terapiya Bo'limi",
+    "icon": "FiHeartHandshake"
+  },
+  {
+    "id": 3,
+    "en": "Trauma Surgery",
+    "ru": "Травматологическая хирургия",
+    "uz": "Travma Jarrohiyasi",
+    "icon": "FiZap"
+  },
+  {
+    "id": 4,
+    "en": "Cardiology",
+    "ru": "Кардиология",
+    "uz": "Kardiologiya",
+    "icon": "FiHeart"
+  },
+  {
+    "id": 5,
+    "en": "Neurology",
+    "ru": "Неврология",
+    "uz": "Nevrologiya",
+    "icon": "FiBrain"
+  },
+  {
+    "id": 6,
+    "en": "Pediatric Emergency",
+    "ru": "Детская скорая помощь",
+    "uz": "Bolalar Shoshilinch Yordami",
+    "icon": "FiUser"
+  },
+  {
+    "id": 7,
+    "en": "Orthopedics",
+    "ru": "Ортопедия",
+    "uz": "Ortopediya",
+    "icon": "FiLayers"
+  },
+  {
+    "id": 8,
+    "en": "Diagnostic Imaging",
+    "ru": "Диагностическая визуализация",
+    "uz": "Diagnostik Tasvir",
+    "icon": "FiEye"
+  }
+]

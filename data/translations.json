@@ -1,0 +1,170 @@
+{
+  "en": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "doctors": "Doctors",
+      "news": "News",
+      "gallery": "Gallery",
+      "contact": "Contact",
+      "language": "Language",
+      "departments": "Departments",
+      "dept_surgery": "Surgery",
+      "dept_therapy": "Therapy",
+      "dept_reanimation": "Reanimation",
+      "dept_special": "Special & Auxiliary"
+    },
+    "hero": {
+      "title": "Republic Emergency Medical Aid Scientific Center Fergana Branch",
+      "subtitle": "Premier emergency medical services with cutting-edge technology and highly qualified medical specialists. Available 24/7 for your health and well-being.",
+      "cta": "Get Appointment"
+    },
+    "stats": {
+      "patients": "50,000+",
+      "patients_label": "Patients Served",
+      "doctors": "150+",
+      "doctors_label": "Expert Doctors",
+      "beds": "500+",
+      "beds_label": "Beds",
+      "years": "25+",
+      "years_label": "Years Experience"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive medical care for all your health needs"
+    },
+    "doctors": {
+      "title": "Meet Our Doctors",
+      "subtitle": "Highly qualified medical professionals dedicated to your health"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Get in touch with our medical team",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Message",
+      "submit": "Send Message",
+      "phone_label": "Phone",
+      "address": "Address",
+      "hours": "Operating Hours"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to common questions about our services"
+    }
+  },
+  "ru": {
+    "nav": {
+      "home": "Главная",
+      "about": "О нас",
+      "services": "Услуги",
+      "doctors": "Врачи",
+      "news": "Новости",
+      "gallery": "Галерея",
+      "contact": "Контакты",
+      "language": "Язык",
+      "departments": "Отделения",
+      "dept_surgery": "Хирургия",
+      "dept_therapy": "Терапия",
+      "dept_reanimation": "Реанимация",
+      "dept_special": "Специальные Отделения"
+    },
+    "hero": {
+      "title": "Республиканский научный центр экстренной медицинской помощи, филиал Фергона",
+      "subtitle": "Передовые услуги скорой помощи с инновационными технологиями и высококвалифицированными медицинскими специалистами. Доступны 24/7 для вашего здоровья и благополучия.",
+      "cta": "Записаться на приём"
+    },
+    "stats": {
+      "patients": "50,000+",
+      "patients_label": "Пациентов",
+      "doctors": "150+",
+      "doctors_label": "Врачей",
+      "beds": "500+",
+      "beds_label": "Коек",
+      "years": "25+",
+      "years_label": "Лет Опыта"
+    },
+    "services": {
+      "title": "Наши Услуги",
+      "subtitle": "Комплексная медицинская помощь для всех ваших потребностей"
+    },
+    "doctors": {
+      "title": "Наша Команда Врачей",
+      "subtitle": "Высоко квалифицированные медицинские специалисты"
+    },
+    "contact": {
+      "title": "Свяжитесь с Нами",
+      "subtitle": "Получите консультацию нашей команды",
+      "name": "Полное Имя",
+      "email": "Email Адрес",
+      "phone": "Номер Телефона",
+      "message": "Сообщение",
+      "submit": "Отправить",
+      "phone_label": "Телефон",
+      "address": "Адрес",
+      "hours": "Часы Работы"
+    },
+    "faq": {
+      "title": "Часто Задаваемые Вопросы",
+      "subtitle": "Найдите ответы на общие вопросы о наших услугах"
+    }
+  },
+  "uz": {
+    "nav": {
+      "home": "Bosh Sahifa",
+      "about": "Biz Haqida",
+      "services": "Xizmatlar",
+      "doctors": "Shifokorlar",
+      "news": "Yangiliklar",
+      "gallery": "Galereya",
+      "contact": "Kontakt",
+      "language": "Til",
+      "departments": "Bo'limlar",
+      "dept_surgery": "Jarrohlik",
+      "dept_therapy": "Terapiya",
+      "dept_reanimation": "Reanimatsiya",
+      "dept_special": "Maxsus va Yordamchi Bo'limi"
+    },
+    "hero": {
+      "title": "Respublika Shoshilinch Tibbiy Yordam Ilmiy Markazi Farg'ona Filiali",
+      "subtitle": "Ilg'or texnologiyalari va yuksak maliyatli tibbiy mutaxassilslar bilan tez-tez tibbiy yordam xizmatları. Sizning sog'lig'ingiz va farohatligingiz uchun 24/7 taqdim etilmoqda.",
+      "cta": "+998 98 939 09 90"
+    },
+    "stats": {
+      "patients": "50,000+",
+      "patients_label": "Bemorlar",
+      "doctors": "150+",
+      "doctors_label": "Shifokorlar",
+      "beds": "500+",
+      "beds_label": "Yataqlar",
+      "years": "25+",
+      "years_label": "Yillar Tajribasi"
+    },
+    "services": {
+      "title": "Bizning Xizmatlar",
+      "subtitle": "Barcha sog'lig'lik ehtiyojlari uchun kompleks tibbiy xizmat"
+    },
+    "doctors": {
+      "title": "Bizning Shifokorlar",
+      "subtitle": "Yuqori maliyatli tibbiy mutaxassislar"
+    },
+    "contact": {
+      "title": "Biz Bilan Bog'lanish",
+      "subtitle": "Bizning jamoamizdan maslahat oling",
+      "name": "To'liq Ismi",
+      "email": "Email Manzili",
+      "phone": "Telefon Raqami",
+      "message": "Xabar",
+      "submit": "Yuborish",
+      "phone_label": "Telefon",
+      "address": "Manzil",
+      "hours": "Ishlash Vaqti"
+    },
+    "faq": {
+      "title": "Tez-tez So'raladigan Savollar",
+      "subtitle": "Bizning xizmatlarimiz haqida tez-tez so'raladigan savollarga javob toping"
+    }
+  }
+}

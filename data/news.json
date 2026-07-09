@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "New Advanced Cardiac Surgery Wing Opened",
+    "excerpt": "Our state-of-the-art cardiac surgery center is now open to serve patients with specialized cardiac procedures.",
+    "content": "We are proud to announce the opening of our new advanced cardiac surgery wing equipped with the latest technology.",
+    "date": "2024-06-15",
+    "category": "Facility",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Emergency Department Wins Excellence Award",
+    "excerpt": "Our emergency department has been recognized for outstanding patient care and response times.",
+    "content": "Our dedicated emergency team has been recognized with the prestigious Healthcare Excellence Award.",
+    "date": "2024-06-10",
+    "category": "Recognition",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Free Health Screening Campaign Launches",
+    "excerpt": "Community health initiative offering free medical screenings for all residents.",
+    "content": "We launch a comprehensive free health screening program for the community this month.",
+    "date": "2024-06-01",
+    "category": "Community",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "Dr. Karimov Leads International Conference",
+    "excerpt": "Our chief emergency physician presents research at the Global Medical Conference.",
+    "content": "Dr. Alisher Karimov presents breakthrough research in emergency medicine practices.",
+    "date": "2024-05-28",
+    "category": "Academic",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "title": "New Pediatric Emergency Wing Unveiled",
+    "excerpt": "Specialized pediatric emergency care facility now operational.",
+    "content": "We have inaugurated our new specialized pediatric emergency department.",
+    "date": "2024-05-20",
+    "category": "Facility",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "Healthcare Team Completes Advanced Training",
+    "excerpt": "Medical staff complete certification in latest emergency protocols.",
+    "content": "Our medical team has successfully completed advanced training in modern emergency protocols.",
+    "date": "2024-05-15",
+    "category": "Training",
+    "featured": false
+  }
+]

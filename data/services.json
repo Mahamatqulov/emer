@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Emergency Care",
+    "description": "24/7 emergency services with trained specialists ready to handle any medical emergency.",
+    "icon": "ambulance",
+    "details": "Our emergency department operates 24 hours a day, 7 days a week with state-of-the-art equipment and experienced physicians."
+  },
+  {
+    "id": 2,
+    "title": "General Medicine",
+    "description": "Comprehensive general medical services for routine checkups and consultations.",
+    "icon": "stethoscope",
+    "details": "Our general medicine team provides preventive care, diagnosis, and treatment for common health conditions."
+  },
+  {
+    "id": 3,
+    "title": "Cardiology",
+    "description": "Specialized heart and cardiovascular disease treatment.",
+    "icon": "heart",
+    "details": "Advanced cardiac care including diagnosis, treatment, and prevention of heart diseases."
+  },
+  {
+    "id": 4,
+    "title": "Orthopedics",
+    "description": "Treatment for bone, joint, and muscle disorders.",
+    "icon": "bone",
+    "details": "Comprehensive orthopedic services including surgery, rehabilitation, and physical therapy."
+  },
+  {
+    "id": 5,
+    "title": "Pediatrics",
+    "description": "Specialized healthcare services for children and infants.",
+    "icon": "baby",
+    "details": "Compassionate pediatric care from newborns through adolescence."
+  },
+  {
+    "id": 6,
+    "title": "Surgery",
+    "description": "Advanced surgical procedures with experienced surgeons.",
+    "icon": "scalpel",
+    "details": "General and specialized surgical services with modern operating facilities."
+  },
+  {
+    "id": 7,
+    "title": "Neurology",
+    "description": "Treatment for neurological disorders and brain conditions.",
+    "icon": "brain",
+    "details": "Expert neurological diagnosis and treatment using latest technology."
+  },
+  {
+    "id": 8,
+    "title": "Diagnostics",
+    "description": "Advanced diagnostic imaging and laboratory services.",
+    "icon": "microscope",
+    "details": "State-of-the-art imaging and testing facilities for accurate diagnosis."
+  }
+]

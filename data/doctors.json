@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Alisher Karimov",
+    "specialty": "Emergency Medicine",
+    "experience": "15+ years",
+    "qualification": "MD, Board Certified",
+    "phone": "+998 90 123 45 67",
+    "image": "doctor-1"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Zainab Abdullayeva",
+    "specialty": "Cardiology",
+    "experience": "12+ years",
+    "qualification": "MD, Cardiologist",
+    "phone": "+998 90 234 56 78",
+    "image": "doctor-2"
+  },
+  {
+    "id": 3,
+    "name": "Dr. Rustam Shodmonov",
+    "specialty": "Surgery",
+    "experience": "18+ years",
+    "qualification": "MD, Surgeon",
+    "phone": "+998 90 345 67 89",
+    "image": "doctor-3"
+  },
+  {
+    "id": 4,
+    "name": "Dr. Munira Hasanova",
+    "specialty": "Pediatrics",
+    "experience": "10+ years",
+    "qualification": "MD, Pediatrician",
+    "phone": "+998 90 456 78 90",
+    "image": "doctor-4"
+  },
+  {
+    "id": 5,
+    "name": "Dr. Timur Gaziev",
+    "specialty": "Orthopedics",
+    "experience": "14+ years",
+    "qualification": "MD, Orthopedic Surgeon",
+    "phone": "+998 90 567 89 01",
+    "image": "doctor-5"
+  },
+  {
+    "id": 6,
+    "name": "Dr. Farida Rahimova",
+    "specialty": "Neurology",
+    "experience": "11+ years",
+    "qualification": "MD, Neurologist",
+    "phone": "+998 90 678 90 12",
+    "image": "doctor-6"
+  }
+]
