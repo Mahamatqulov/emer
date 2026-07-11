@@ -3,7 +3,7 @@
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { FiPhone, FiMail, FiMapPin, FiClock } from "react-icons/fi";
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -98,12 +98,7 @@ export function Footer() {
               >
                 <FaFacebook className="w-5 h-5" />
               </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/80 transition-colors"
-              >
-                <FaTwitter className="w-5 h-5" />
-              </a>
+
               <a
                 href="#"
                 className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/80 transition-colors"
