@@ -6,7 +6,7 @@
     "experience": "15+ years",
     "qualification": "MD, Board Certified",
     "phone": "+998 90 123 45 67",
-    "image": "doctor-1"
+    "image": "https://i.pravatar.cc/400?img=12"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "experience": "12+ years",
     "qualification": "MD, Cardiologist",
     "phone": "+998 90 234 56 78",
-    "image": "doctor-2"
+    "image": "https://i.pravatar.cc/400?img=47"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "experience": "18+ years",
     "qualification": "MD, Surgeon",
     "phone": "+998 90 345 67 89",
-    "image": "doctor-3"
+    "image": "https://i.pravatar.cc/400?img=33"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "experience": "10+ years",
     "qualification": "MD, Pediatrician",
     "phone": "+998 90 456 78 90",
-    "image": "doctor-4"
+    "image": "https://i.pravatar.cc/400?img=44"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "experience": "14+ years",
     "qualification": "MD, Orthopedic Surgeon",
     "phone": "+998 90 567 89 01",
-    "image": "doctor-5"
+    "image": "https://i.pravatar.cc/400?img=51"
   },
   {
     "id": 6,
@@ -51,6 +51,7 @@
     "experience": "11+ years",
     "qualification": "MD, Neurologist",
     "phone": "+998 90 678 90 12",
-    "image": "doctor-6"
+    "image": "https://i.pravatar.cc/400?img=45"
   }
 ]
+

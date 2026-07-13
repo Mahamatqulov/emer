@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/contexts/ThemeProvider";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import "./globals.css";
 import { Header } from "@/components/Header";
+import PageLoader from "@/components/PageLoader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,6 +39,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <LanguageProvider>
+            {/* <PageLoader>{children}</PageLoader> */}
             {children}
             {process.env.NODE_ENV === "production" && <Analytics />}
           </LanguageProvider>

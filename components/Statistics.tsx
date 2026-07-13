@@ -1,97 +1,6 @@
-// 'use client'
-
-// import { motion } from 'framer-motion'
-// import { useLanguage } from '@/contexts/LanguageContext'
-// import CountUp from 'react-countup'
-
-// export function Statistics() {
-//   const { t } = useLanguage()
-
-//   const stats = [
-//     {
-//       key: 'patients',
-//       value: 50000,
-//       label: t('stats.patients_label'),
-//       suffix: '+',
-//     },
-//     {
-//       key: 'doctors',
-//       value: 150,
-//       label: t('stats.doctors_label'),
-//       suffix: '+',
-//     },
-//     {
-//       key: 'beds',
-//       value: 500,
-//       label: t('stats.beds_label'),
-//       suffix: '+',
-//     },
-//     {
-//       key: 'years',
-//       value: 25,
-//       label: t('stats.years_label'),
-//       suffix: '+',
-//     },
-//   ]
-
-//   const containerVariants = {
-//     hidden: { opacity: 0 },
-//     visible: {
-//       opacity: 1,
-//       transition: {
-//         staggerChildren: 0.1,
-//         delayChildren: 0.3,
-//       },
-//     },
-//   }
-
-//   const itemVariants = {
-//     hidden: { opacity: 0, y: 20 },
-//     visible: {
-//       opacity: 1,
-//       y: 0,
-//       transition: { duration: 0.6 },
-//     },
-//   }
-
-//   return (
-//     <section className="py-16 bg-gradient-to-r from-primary/5 to-accent/5">
-//       <div className="container mx-auto px-4">
-//         <motion.div
-//           variants={containerVariants}
-//           initial="hidden"
-//           whileInView="visible"
-//           viewport={{ once: true }}
-//           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-//         >
-//           {stats.map((stat, index) => (
-//             <motion.div
-//               key={index}
-//               variants={itemVariants}
-//               className="text-center p-6 rounded-xl bg-white dark:bg-slate-800 border border-border shadow-md hover:shadow-lg transition-shadow"
-//             >
-//               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-//                 <CountUp
-//                   start={0}
-//                   end={stat.value}
-//                   duration={2.5}
-//                   suffix={stat.suffix}
-//                 />
-//               </div>
-//               <p className="text-muted-foreground text-lg font-medium">
-//                 {stat.label}
-//               </p>
-//             </motion.div>
-//           ))}
-//         </motion.div>
-//       </div>
-//     </section>
-//   )
-// }
-
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import CountUp from "react-countup";
@@ -102,6 +11,7 @@ export function Statistics() {
   const { t } = useLanguage();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.4 });
+  const [finished, setFinished] = useState<Record<string, boolean>>({});
 
   const stats = [
     {
@@ -110,6 +20,7 @@ export function Statistics() {
       label: t("stats.patients_label"),
       suffix: "+",
       icon: FiUsers,
+      cx: 150,
     },
     {
       key: "doctors",
@@ -117,6 +28,7 @@ export function Statistics() {
       label: t("stats.doctors_label"),
       suffix: "+",
       icon: FaUserDoctor,
+      cx: 450,
     },
     {
       key: "beds",
@@ -124,6 +36,7 @@ export function Statistics() {
       label: t("stats.beds_label"),
       suffix: "+",
       icon: FaBed,
+      cx: 750,
     },
     {
       key: "years",
@@ -131,21 +44,20 @@ export function Statistics() {
       label: t("stats.years_label"),
       suffix: "+",
       icon: FiCalendar,
+      cx: 1050,
     },
   ];
 
   const itemVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
+    hidden: { opacity: 0, y: 28, scale: 0.96 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
-        duration: 0.6,
-        delay: i * 0.15,
-        ease: [0.25, 0.1, 0.25, 1], // <-- string emas
+        duration: 0.65,
+        delay: 0.5 + i * 0.18,
+        ease: [0.16, 1, 0.3, 1],
       },
     }),
   };
@@ -155,35 +67,74 @@ export function Statistics() {
       ref={sectionRef}
       className="relative overflow-hidden bg-background py-20 md:py-28"
     >
-      {/* Signature element: EKG / heartbeat line drawn across the section */}
-      <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 opacity-[0.35] dark:opacity-[0.25]">
-        <svg
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          className="h-24 w-full md:h-32"
-        >
-          <motion.path
-            d="M0,60 L220,60 L250,60 L270,20 L300,100 L330,10 L360,60 L390,60 L920,60 L950,60 L970,20 L1000,100 L1030,10 L1060,60 L1090,60 L1200,60"
-            fill="none"
-            stroke="var(--primary)"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0 }}
-            animate={isInView ? { pathLength: 1 } : { pathLength: 0 }}
-            transition={{ duration: 2, ease: "easeInOut" }}
-          />
-        </svg>
+      {/* Ambient aurora — hero bilan bir xil oilaviy tovush */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-32 left-1/4 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -bottom-24 right-1/4 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mb-6 flex items-center justify-center gap-2.5"
+        >
+          <span className="relative flex h-2 w-2">
+            <motion.span
+              className="absolute inline-flex h-full w-full rounded-full bg-primary"
+              animate={
+                isInView ? { scale: [1, 1.4, 1], opacity: [0.9, 0.2, 0.9] } : {}
+              }
+              transition={{
+                duration: 1.8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+          </span>
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             {t("stats.eyebrow") || "Ishonch raqamlarda"}
           </span>
+        </motion.div>
+
+        {/* Signature: EKG chizig'i — har bir spike bevosita kartochka ustida to'xtaydi */}
+        <div className="relative mx-auto mb-2 h-16 w-full max-w-6xl md:h-20">
+          <svg
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+            className="h-full w-full overflow-visible"
+          >
+            <motion.path
+              d="M0,60 L130,60 L140,20 L150,100 L160,10 L170,60 L430,60 L440,20 L450,100 L460,10 L470,60 L730,60 L740,20 L750,100 L760,10 L770,60 L1030,60 L1040,20 L1050,100 L1060,10 L1070,60 L1200,60"
+              fill="none"
+              stroke="var(--primary)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              initial={{ pathLength: 0, opacity: 0.3 }}
+              animate={isInView ? { pathLength: 1, opacity: 0.45 } : {}}
+              transition={{ duration: 1.8, ease: "easeInOut" }}
+            />
+            {stats.map((s, i) => (
+              <motion.circle
+                key={s.key}
+                cx={s.cx}
+                cy={10}
+                r={5}
+                fill="var(--accent)"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={
+                  isInView ? { opacity: [0, 1, 0.7], scale: [0, 1.4, 1] } : {}
+                }
+                transition={{ duration: 0.5, delay: 0.4 + i * 0.18 + 1.2 }}
+              />
+            ))}
+          </svg>
         </div>
 
-        <div className="grid grid-cols-2 gap-y-12 lg:grid-cols-4 lg:gap-y-0">
+        <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
@@ -193,19 +144,30 @@ export function Statistics() {
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
                 variants={itemVariants}
-                className="relative flex flex-col items-center gap-3 px-4 text-center lg:border-l lg:border-border lg:first:border-l-0"
+                whileHover={{ y: -6 }}
+                className="group relative flex flex-col items-center gap-3 rounded-2xl border border-border/60 bg-card/40 px-4 py-8 text-center backdrop-blur-sm transition-colors duration-300 hover:border-primary/40 hover:bg-card/70"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/15">
+                <motion.div
+                  className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/15"
+                  whileHover={{
+                    scale: [1, 1.18, 1, 1.1, 1],
+                    transition: { duration: 0.7, times: [0, 0.2, 0.4, 0.6, 1] },
+                  }}
+                >
                   <Icon className="h-6 w-6" />
-                </div>
+                </motion.div>
 
-                <div className="bg-linear-to-r from-primary to-accent bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
+                <div className="bg-linear-to-r from-primary to-accent bg-clip-text text-4xl font-bold text-transparent md:text-5xl tabular-nums">
                   {isInView && (
                     <CountUp
                       start={0}
                       end={stat.value}
-                      duration={2.5}
+                      duration={2.2}
+                      delay={0.5 + index * 0.18}
                       suffix={stat.suffix}
+                      onEnd={() =>
+                        setFinished((prev) => ({ ...prev, [stat.key]: true }))
+                      }
                     />
                   )}
                 </div>
@@ -213,6 +175,23 @@ export function Statistics() {
                 <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground md:text-base">
                   {stat.label}
                 </p>
+
+                {/* Yakunlanganda mayin nur */}
+                <motion.div
+                  className="pointer-events-none absolute inset-0 rounded-2xl"
+                  animate={
+                    finished[stat.key]
+                      ? {
+                          boxShadow: [
+                            "0 0 0px var(--primary)",
+                            "0 0 24px var(--primary)",
+                            "0 0 0px var(--primary)",
+                          ],
+                        }
+                      : {}
+                  }
+                  transition={{ duration: 1, ease: "easeOut" }}
+                />
               </motion.div>
             );
           })}
