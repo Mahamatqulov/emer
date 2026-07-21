@@ -1,6 +1,7 @@
 // "use client";
 
-// import { motion } from "framer-motion";
+// import { useEffect, useState } from "react";
+// import { AnimatePresence, motion } from "framer-motion";
 // import {
 //   HeartPulse,
 //   Brain,
@@ -9,50 +10,271 @@
 //   Baby,
 //   Microscope,
 //   ChevronRight,
+//   X,
+//   Check,
 // } from "lucide-react";
 // import { useLanguage } from "@/contexts/LanguageContext";
 
-// const departments = [
+// type Department = {
+//   icon: typeof HeartPulse;
+//   color: string;
+//   title: string;
+//   desc: string;
+//   fullDesc: string;
+//   services: string[];
+//   stats: { label: string; value: string }[];
+// };
+
+// const departments: Department[] = [
 //   {
 //     icon: HeartPulse,
 //     color: "#FF3B30",
 //     title: "Cardiology",
 //     desc: "Advanced catheterisation, EP studies and heart failure management",
+//     fullDesc:
+//       "Our cardiology team diagnoses and treats the full spectrum of heart conditions, from arrhythmias to complex coronary disease. The department combines a 24/7 catheterisation lab with dedicated heart-failure and electrophysiology programmes, so patients move from diagnosis to treatment without delay.",
+//     services: [
+//       "Cardiac catheterisation & angioplasty",
+//       "Electrophysiology (EP) studies",
+//       "Heart failure management",
+//       "Echocardiography & stress testing",
+//     ],
+//     stats: [
+//       { label: "Specialists", value: "14" },
+//       { label: "Avg. wait time", value: "< 20 min" },
+//     ],
 //   },
 //   {
 //     icon: Brain,
 //     color: "#0A84FF",
 //     title: "Neurology",
 //     desc: "Comprehensive neurological diagnosis, epilepsy and stroke care",
+//     fullDesc:
+//       "The neurology department covers everything from routine diagnostics to time-critical stroke response. Our stroke unit follows a strict door-to-needle protocol, while dedicated epilepsy monitoring and neuroimaging support long-term care for chronic conditions.",
+//     services: [
+//       "24/7 stroke unit (door-to-needle protocol)",
+//       "Epilepsy monitoring (EEG)",
+//       "Neuroimaging (MRI/CT)",
+//       "Movement disorder clinics",
+//     ],
+//     stats: [
+//       { label: "Specialists", value: "10" },
+//       { label: "Stroke response", value: "< 60 min" },
+//     ],
 //   },
 //   {
 //     icon: Bone,
 //     color: "#FF9500",
 //     title: "Orthopedics",
 //     desc: "Joint replacement, spine surgery and sports rehabilitation",
+//     fullDesc:
+//       "From sports injuries to complex joint replacement, our orthopedic surgeons use minimally invasive techniques wherever possible to shorten recovery time. An in-house rehabilitation team supports patients through every stage of healing.",
+//     services: [
+//       "Joint replacement (hip, knee, shoulder)",
+//       "Spine surgery",
+//       "Sports medicine & arthroscopy",
+//       "Post-operative rehabilitation",
+//     ],
+//     stats: [
+//       { label: "Specialists", value: "9" },
+//       { label: "Procedures / year", value: "1,200+" },
+//     ],
 //   },
 //   {
 //     icon: Eye,
 //     color: "#5AC8FA",
 //     title: "Ophthalmology",
 //     desc: "Laser correction, cataract surgery and retinal disease management",
+//     fullDesc:
+//       "Our ophthalmology unit treats conditions ranging from routine vision correction to complex retinal disease. Same-day cataract surgery and precision laser correction are performed using the latest diagnostic and surgical equipment.",
+//     services: [
+//       "Laser vision correction",
+//       "Cataract surgery",
+//       "Retinal disease management",
+//       "Glaucoma screening & treatment",
+//     ],
+//     stats: [
+//       { label: "Specialists", value: "6" },
+//       { label: "Cataract recovery", value: "Same-day" },
+//     ],
 //   },
 //   {
 //     icon: Baby,
 //     color: "#34C759",
 //     title: "Pediatrics",
 //     desc: "Dedicated child health from neonatal through adolescent medicine",
+//     fullDesc:
+//       "A dedicated pediatric wing covers care from the neonatal period through adolescence, staffed by physicians trained specifically in child health. Family-friendly rooms and a separate pediatric emergency entrance keep the experience calm for younger patients.",
+//     services: [
+//       "Neonatal & newborn care",
+//       "Pediatric emergency unit",
+//       "Childhood vaccination programmes",
+//       "Growth & development monitoring",
+//     ],
+//     stats: [
+//       { label: "Specialists", value: "11" },
+//       { label: "Separate ER entrance", value: "Yes" },
+//     ],
 //   },
 //   {
 //     icon: Microscope,
 //     color: "#BF5AF2",
 //     title: "Oncology",
 //     desc: "Precision immunotherapy, proton therapy and tumour boards",
+//     fullDesc:
+//       "Cancer care is coordinated through weekly multidisciplinary tumour boards, bringing together oncologists, radiologists and surgeons around each patient's case. Treatment plans combine precision immunotherapy with advanced radiation options.",
+//     services: [
+//       "Multidisciplinary tumour boards",
+//       "Precision immunotherapy",
+//       "Radiation & proton therapy referral",
+//       "Palliative & supportive care",
+//     ],
+//     stats: [
+//       { label: "Specialists", value: "8" },
+//       { label: "Tumour board", value: "Weekly" },
+//     ],
 //   },
 // ];
 
+// function DepartmentModal({
+//   dept,
+//   onClose,
+// }: {
+//   dept: Department | null;
+//   onClose: () => void;
+// }) {
+//   useEffect(() => {
+//     if (!dept) return;
+//     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+//     document.addEventListener("keydown", onKey);
+//     document.body.style.overflow = "hidden";
+//     return () => {
+//       document.removeEventListener("keydown", onKey);
+//       document.body.style.overflow = "";
+//     };
+//   }, [dept, onClose]);
+
+//   return (
+//     <AnimatePresence>
+//       {dept && (
+//         <motion.div
+//           className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           exit={{ opacity: 0 }}
+//           transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+//           onClick={onClose}
+//         >
+//           <div
+//             className="absolute inset-0"
+//             style={{
+//               background: "rgba(17, 24, 39, 0.5)",
+//               backdropFilter: "blur(6px)",
+//             }}
+//           />
+
+//           <motion.div
+//             onClick={(e) => e.stopPropagation()}
+//             initial={{ opacity: 0, y: 24, scale: 0.97 }}
+//             animate={{ opacity: 1, y: 0, scale: 1 }}
+//             exit={{ opacity: 0, y: 16, scale: 0.98 }}
+//             transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+//             className="relative z-10 w-full max-w-lg max-h-[86vh] overflow-y-auto"
+//             style={{
+//               background:
+//                 "linear-gradient(145deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.88) 100%)",
+//               backdropFilter: "blur(56px) saturate(200%)",
+//               border: "1px solid rgba(255,255,255,0.7)",
+//               boxShadow:
+//                 "rgba(10,132,255,0.14) 0px 24px 64px, rgba(255,255,255,0.9) 0px 1px 0px inset",
+//               borderRadius: 28,
+//             }}
+//           >
+//             <button
+//               onClick={onClose}
+//               className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full transition-colors"
+//               style={{ background: "rgba(17,24,39,0.06)" }}
+//               aria-label="Close"
+//             >
+//               <X size={16} strokeWidth={2.5} className="text-[#111827]" />
+//             </button>
+
+//             <div className="p-8">
+//               <div
+//                 className="w-14 h-14 rounded-[18px] flex items-center justify-center mb-6"
+//                 style={{ background: hexToRgba(dept.color, 0.1) }}
+//               >
+//                 <dept.icon
+//                   size={26}
+//                   strokeWidth={1.75}
+//                   style={{ color: dept.color }}
+//                 />
+//               </div>
+
+//               <h3 className="text-[26px] font-bold text-[#111827] tracking-tight mb-3">
+//                 {dept.title}
+//               </h3>
+//               <p className="text-[14.5px] leading-relaxed text-[#6B7280] mb-6">
+//                 {dept.fullDesc}
+//               </p>
+
+//               <div className="flex gap-3 mb-6">
+//                 {dept.stats.map((s) => (
+//                   <div
+//                     key={s.label}
+//                     className="flex-1 rounded-2xl px-4 py-3"
+//                     style={{ background: hexToRgba(dept.color, 0.07) }}
+//                   >
+//                     <div
+//                       className="text-[18px] font-bold tracking-tight"
+//                       style={{ color: dept.color }}
+//                     >
+//                       {s.value}
+//                     </div>
+//                     <div className="text-[11.5px] text-[#6B7280] mt-0.5">
+//                       {s.label}
+//                     </div>
+//                   </div>
+//                 ))}
+//               </div>
+
+//               <div className="space-y-2.5 mb-8">
+//                 {dept.services.map((service) => (
+//                   <div key={service} className="flex items-start gap-3">
+//                     <span
+//                       className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
+//                       style={{ background: hexToRgba(dept.color, 0.12) }}
+//                     >
+//                       <Check
+//                         size={11}
+//                         strokeWidth={3}
+//                         style={{ color: dept.color }}
+//                       />
+//                     </span>
+//                     <span className="text-[13.5px] text-[#111827] leading-snug">
+//                       {service}
+//                     </span>
+//                   </div>
+//                 ))}
+//               </div>
+
+//               <button
+//                 className="w-full py-3.5 rounded-2xl font-semibold text-[14px] text-white transition-transform active:scale-[0.98]"
+//                 style={{ background: dept.color }}
+//               >
+//                 Book an appointment
+//               </button>
+//             </div>
+//           </motion.div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   );
+// }
+
 // export function Departments() {
 //   const { t } = useLanguage();
+//   const [selected, setSelected] = useState<Department | null>(null);
 
 //   return (
 //     <section className="py-24 px-6 lg:px-8" style={{ background: "#F2F5FA" }}>
@@ -126,6 +348,10 @@
 //                 }}
 //               >
 //                 <div
+//                   onClick={() => setSelected(dept)}
+//                   role="button"
+//                   tabIndex={0}
+//                   onKeyDown={(e) => e.key === "Enter" && setSelected(dept)}
 //                   className="group rounded-[28px] p-7 cursor-pointer transition-all duration-300 hover:-translate-y-2"
 //                   style={{
 //                     background: `linear-gradient(145deg, rgba(255,255,255,0.88) 0%, ${hexToRgba(
@@ -153,7 +379,7 @@
 
 //                   {/* Accent line */}
 //                   <div
-//                     className="h-0.5 w-8 rounded-full mb-5 transition-all duration-300 group-hover:w-12"
+//                     className="h-0.5 w-8 rounded-full mb-3 transition-all duration-300 group-hover:w-12"
 //                     style={{ background: dept.color, opacity: 0.5 }}
 //                   />
 
@@ -181,6 +407,8 @@
 //           })}
 //         </div>
 //       </div>
+
+//       <DepartmentModal dept={selected} onClose={() => setSelected(null)} />
 //     </section>
 //   );
 // }
@@ -224,109 +452,109 @@ const departments: Department[] = [
   {
     icon: HeartPulse,
     color: "#FF3B30",
-    title: "Cardiology",
-    desc: "Advanced catheterisation, EP studies and heart failure management",
+    title: "Kardiologiya",
+    desc: "Zamonaviy kateterizatsiya, EFI tekshiruvlari va yurak yetishmovchiligini boshqarish",
     fullDesc:
-      "Our cardiology team diagnoses and treats the full spectrum of heart conditions, from arrhythmias to complex coronary disease. The department combines a 24/7 catheterisation lab with dedicated heart-failure and electrophysiology programmes, so patients move from diagnosis to treatment without delay.",
+      "Kardiologiya jamoamiz ritm buzilishlaridan tortib murakkab koronar kasalliklargacha yurak kasalliklarining to‘liq spektrini aniqlaydi va davolaydi. Bo‘limda 24/7 ishlaydigan kateterizatsiya laboratoriyasi, shuningdek maxsus yurak yetishmovchiligi va elektrofiziologiya dasturlari mavjud — shu tufayli bemorlar diagnostikadan davolashgacha bo‘lgan yo‘lni kechiktirmasdan bosib o‘tadi.",
     services: [
-      "Cardiac catheterisation & angioplasty",
-      "Electrophysiology (EP) studies",
-      "Heart failure management",
-      "Echocardiography & stress testing",
+      "Yurak kateterizatsiyasi va angioplastika",
+      "Elektrofiziologik (EFI) tekshiruvlar",
+      "Yurak yetishmovchiligini boshqarish",
+      "Ekokardiografiya va stress-test",
     ],
     stats: [
-      { label: "Specialists", value: "14" },
-      { label: "Avg. wait time", value: "< 20 min" },
+      { label: "Mutaxassislar", value: "14" },
+      { label: "O‘rtacha kutish vaqti", value: "< 20 daq." },
     ],
   },
   {
     icon: Brain,
     color: "#0A84FF",
-    title: "Neurology",
-    desc: "Comprehensive neurological diagnosis, epilepsy and stroke care",
+    title: "Nevrologiya",
+    desc: "Nevrologik kasalliklarni to‘liq diagnostika qilish, epilepsiya va insult davolash",
     fullDesc:
-      "The neurology department covers everything from routine diagnostics to time-critical stroke response. Our stroke unit follows a strict door-to-needle protocol, while dedicated epilepsy monitoring and neuroimaging support long-term care for chronic conditions.",
+      'Nevrologiya bo‘limi oddiy diagnostikadan tortib vaqt talab qiladigan insultga javob berishgacha bo‘lgan barcha yo‘nalishlarni qamrab oladi. Insult bo‘limimiz qat’iy "eshikdan ingichka igna kiritishgacha" protokoliga amal qiladi, shu bilan birga maxsus epilepsiya monitoringi va neyrotasvirlash surunkali holatlarni uzoq muddatli davolashni qo‘llab-quvvatlaydi.',
     services: [
-      "24/7 stroke unit (door-to-needle protocol)",
-      "Epilepsy monitoring (EEG)",
-      "Neuroimaging (MRI/CT)",
-      "Movement disorder clinics",
+      "24/7 insult bo‘limi (tezkor protokol asosida)",
+      "Epilepsiya monitoringi (EEG)",
+      "Neyrotasvirlash (MRI/KT)",
+      "Harakat buzilishlari klinikalari",
     ],
     stats: [
-      { label: "Specialists", value: "10" },
-      { label: "Stroke response", value: "< 60 min" },
+      { label: "Mutaxassislar", value: "10" },
+      { label: "Insultga javob berish", value: "< 60 daq." },
     ],
   },
   {
     icon: Bone,
     color: "#FF9500",
-    title: "Orthopedics",
-    desc: "Joint replacement, spine surgery and sports rehabilitation",
+    title: "Ortopediya",
+    desc: "Bo‘g‘im protezlash, umurtqa pog‘onasi jarrohligi va sport reabilitatsiyasi",
     fullDesc:
-      "From sports injuries to complex joint replacement, our orthopedic surgeons use minimally invasive techniques wherever possible to shorten recovery time. An in-house rehabilitation team supports patients through every stage of healing.",
+      "Sport jarohatlaridan murakkab bo‘g‘im protezlashgacha, ortoped-jarrohlarimiz tiklanish muddatini qisqartirish uchun imkon qadar kam invaziv usullardan foydalanadi. Ichki reabilitatsiya jamoasi bemorlarni davolanishning har bir bosqichida qo‘llab-quvvatlaydi.",
     services: [
-      "Joint replacement (hip, knee, shoulder)",
-      "Spine surgery",
-      "Sports medicine & arthroscopy",
-      "Post-operative rehabilitation",
+      "Bo‘g‘im protezlash (son, tizza, yelka)",
+      "Umurtqa pog‘onasi jarrohligi",
+      "Sport tibbiyoti va artroskopiya",
+      "Operatsiyadan keyingi reabilitatsiya",
     ],
     stats: [
-      { label: "Specialists", value: "9" },
-      { label: "Procedures / year", value: "1,200+" },
+      { label: "Mutaxassislar", value: "9" },
+      { label: "Yiliga operatsiyalar", value: "1,200+" },
     ],
   },
   {
     icon: Eye,
     color: "#5AC8FA",
-    title: "Ophthalmology",
-    desc: "Laser correction, cataract surgery and retinal disease management",
+    title: "Oftalmologiya",
+    desc: "Lazer korreksiya, katarakta operatsiyasi va to‘r pardasi kasalliklarini davolash",
     fullDesc:
-      "Our ophthalmology unit treats conditions ranging from routine vision correction to complex retinal disease. Same-day cataract surgery and precision laser correction are performed using the latest diagnostic and surgical equipment.",
+      "Oftalmologiya bo‘limimiz oddiy ko‘rish korreksiyasidan murakkab to‘r pardasi kasalliklarigacha bo‘lgan holatlarni davolaydi. Bir kunlik katarakta operatsiyasi va aniq lazer korreksiyasi eng zamonaviy diagnostika va jarrohlik uskunalari yordamida amalga oshiriladi.",
     services: [
-      "Laser vision correction",
-      "Cataract surgery",
-      "Retinal disease management",
-      "Glaucoma screening & treatment",
+      "Lazer bilan ko‘rishni tiklash",
+      "Katarakta operatsiyasi",
+      "To‘r pardasi kasalliklarini davolash",
+      "Glaukomani skrining va davolash",
     ],
     stats: [
-      { label: "Specialists", value: "6" },
-      { label: "Cataract recovery", value: "Same-day" },
+      { label: "Mutaxassislar", value: "6" },
+      { label: "Katarakta tiklanishi", value: "Bir kunda" },
     ],
   },
   {
     icon: Baby,
     color: "#34C759",
-    title: "Pediatrics",
-    desc: "Dedicated child health from neonatal through adolescent medicine",
+    title: "Pediatriya",
+    desc: "Neonatal davrdan o‘smirlik yoshigacha bolalar salomatligiga ixtisoslashgan yordam",
     fullDesc:
-      "A dedicated pediatric wing covers care from the neonatal period through adolescence, staffed by physicians trained specifically in child health. Family-friendly rooms and a separate pediatric emergency entrance keep the experience calm for younger patients.",
+      "Maxsus pediatriya bo‘limi neonatal davrdan o‘smirlikgacha bo‘lgan davrni qamrab oladi, xodimlar aynan bolalar salomatligi bo‘yicha tayyorlangan. Oilaviy sharoitdagi xonalar va alohida bolalar shoshilinch yordam kirish joyi yosh bemorlar uchun tinch muhit yaratadi.",
     services: [
-      "Neonatal & newborn care",
-      "Pediatric emergency unit",
-      "Childhood vaccination programmes",
-      "Growth & development monitoring",
+      "Neonatal va yangi tug‘ilgan chaqaloqlarga g‘amxo‘rlik",
+      "Bolalar shoshilinch yordam bo‘limi",
+      "Bolalar uchun emlash dasturlari",
+      "O‘sish va rivojlanishni kuzatish",
     ],
     stats: [
-      { label: "Specialists", value: "11" },
-      { label: "Separate ER entrance", value: "Yes" },
+      { label: "Mutaxassislar", value: "11" },
+      { label: "Alohida shoshilinch kirish", value: "Ha" },
     ],
   },
   {
     icon: Microscope,
     color: "#BF5AF2",
-    title: "Oncology",
-    desc: "Precision immunotherapy, proton therapy and tumour boards",
+    title: "Onkologiya",
+    desc: "Aniq immunoterapiya, proton terapiyasi va konsiliumlar",
     fullDesc:
-      "Cancer care is coordinated through weekly multidisciplinary tumour boards, bringing together oncologists, radiologists and surgeons around each patient's case. Treatment plans combine precision immunotherapy with advanced radiation options.",
+      "Saraton kasalligini davolash har haftalik ko‘p tarmoqli konsiliumlar orqali muvofiqlashtiriladi — onkologlar, radiologlar va jarrohlar har bir bemorning holati bo‘yicha birgalikda ish olib boradi. Davolash rejalari aniq immunoterapiyani ilg‘or nurlanish variantlari bilan birlashtiradi.",
     services: [
-      "Multidisciplinary tumour boards",
-      "Precision immunotherapy",
-      "Radiation & proton therapy referral",
-      "Palliative & supportive care",
+      "Ko‘p tarmoqli konsiliumlar",
+      "Aniq immunoterapiya",
+      "Nurlanish va proton terapiyasiga yo‘naltirish",
+      "Palliativ va qo‘llab-quvvatlovchi yordam",
     ],
     stats: [
-      { label: "Specialists", value: "8" },
-      { label: "Tumour board", value: "Weekly" },
+      { label: "Mutaxassislar", value: "8" },
+      { label: "Konsilium", value: "Haftalik" },
     ],
   },
 ];
@@ -389,7 +617,7 @@ function DepartmentModal({
               onClick={onClose}
               className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full transition-colors"
               style={{ background: "rgba(17,24,39,0.06)" }}
-              aria-label="Close"
+              aria-label="Yopish"
             >
               <X size={16} strokeWidth={2.5} className="text-[#111827]" />
             </button>
@@ -457,7 +685,7 @@ function DepartmentModal({
                 className="w-full py-3.5 rounded-2xl font-semibold text-[14px] text-white transition-transform active:scale-[0.98]"
                 style={{ background: dept.color }}
               >
-                Book an appointment
+                Qabulga yozilish
               </button>
             </div>
           </motion.div>
@@ -495,7 +723,7 @@ export function Departments() {
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#0A84FF]" />
               <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#0A84FF]">
-                Medical Departments
+                Tibbiyot bo‘limlari
               </span>
             </div>
           </motion.div>
@@ -507,9 +735,9 @@ export function Departments() {
             transition={{ duration: 0.75, delay: 0.07, ease: [0.4, 0, 0.2, 1] }}
           >
             <h2 className="text-[38px] lg:text-[52px] font-bold tracking-[-0.035em] leading-[1.08] mb-4 text-[#111827]">
-              Specialised Care for
+              Har qanday holat uchun
               <br />
-              Every Condition
+              ixtisoslashgan davolash
             </h2>
           </motion.div>
 
@@ -520,8 +748,8 @@ export function Departments() {
             transition={{ duration: 0.75, delay: 0.12, ease: [0.4, 0, 0.2, 1] }}
           >
             <p className="text-[17px] leading-relaxed max-w-[540px] mx-auto text-[#6B7280]">
-              Our departments unite the finest clinicians, cutting-edge
-              equipment and evidence-based protocols.
+              Bo‘limlarimiz eng malakali shifokorlarni, ilg‘or uskunalarni va
+              isbotlangan davolash protokollarini birlashtiradi.
             </p>
           </motion.div>
         </div>
@@ -589,7 +817,7 @@ export function Departments() {
                     className="flex items-center gap-1.5 text-[13px] font-semibold transition-colors"
                     style={{ color: dept.color }}
                   >
-                    Learn more
+                    Batafsil
                     <ChevronRight
                       size={13}
                       strokeWidth={2.5}

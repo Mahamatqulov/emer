@@ -18,7 +18,7 @@
     "hero": {
       "title": "Republic Emergency Medical Aid Scientific Center Fergana Branch",
       "subtitle": "Premier emergency medical services with cutting-edge technology and highly qualified medical specialists. Available 24/7 for your health and well-being.",
-      "cta": "Get Appointment"
+      "cta": "+998 98 939 09 90"
     },
     "stats": {
       "patients": "50,000+",
@@ -74,7 +74,7 @@
     "hero": {
       "title": "Республиканский научный центр экстренной медицинской помощи, филиал Фергона",
       "subtitle": "Передовые услуги скорой помощи с инновационными технологиями и высококвалифицированными медицинскими специалистами. Доступны 24/7 для вашего здоровья и благополучия.",
-      "cta": "Записаться на приём"
+      "cta": "+998 98 939 09 90"
     },
     "stats": {
       "patients": "50,000+",
@@ -125,7 +125,13 @@
       "dept_surgery": "Jarrohlik",
       "dept_therapy": "Terapiya",
       "dept_reanimation": "Reanimatsiya",
-      "dept_special": "Maxsus va Yordamchi Bo'limi"
+      "dept_special": "Maxsus va Yordamchi Bo'limi",
+      "dept_combustiology": "Kombustiologiya",
+      "dept_PediatricPolytrauma": "Bolalar qo'shaloq tan jarohatlari bo'limi",
+      "dept_Combustiology": "Kombustiologiya",
+      "dept_Neurosurgery": "Nevroxirurgiya",
+      "dept_Traumatology": "Travmatologiya",
+      "dept_BloodTransfusion": "Qon Qo'yish"
     },
     "hero": {
       "title": "Respublika Shoshilinch Tibbiy Yordam Ilmiy Markazi Farg'ona Filiali",

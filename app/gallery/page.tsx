@@ -332,7 +332,7 @@ function GalleryContent() {
                   {selectedImage.type === "image" ? (
                     <div className="relative h-96 w-full overflow-hidden bg-linear-to-br from-primary/20 to-accent/20">
                       <Image
-                        src={selectedImage.image}
+                        src={selectedImage.image!}
                         alt={selectedImage.title}
                         fill
                         className="object-cover"

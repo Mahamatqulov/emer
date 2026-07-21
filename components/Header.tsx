@@ -37,10 +37,15 @@ export function Header() {
   ];
 
   const departments = [
-    { label: t("nav.dept_surgery"), href: "/#surgery" },
-    { label: t("nav.dept_therapy"), href: "/#therapy" },
-    { label: t("nav.dept_reanimation"), href: "/#reanimation" },
-    { label: t("nav.dept_special"), href: "/#special" },
+    { label: t("nav.dept_surgery"), href: "/surgery" },
+    { label: t("nav.dept_therapy"), href: "/therapy" },
+    { label: t("nav.dept_reanimation"), href: "/reanimation" },
+    { label: t("nav.dept_special"), href: "/special" },
+    { label: t("nav.dept_Neurosurgery"), href: "/neurosurgery" },
+    { label: t("nav.dept_PediatricPolytrauma"), href: "/PediatricPolytrauma" },
+    { label: t("nav.dept_Combustiology"), href: "/Combustiology" },
+    { label: t("nav.dept_Traumatology"), href: "/Traumatology" },
+    { label: t("nav.dept_BloodTransfusion"), href: "/BloodTransfusion" },
   ];
 
   return (
@@ -103,7 +108,7 @@ export function Header() {
                 {t("nav.departments")}
                 <FiChevronDown className="transition-transform group-hover:rotate-180" />
               </button>
-              <div className="invisible absolute left-0 mt-3 w-56 rounded-2xl border border-border bg-white p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 dark:bg-slate-900">
+              <div className="invisible absolute left-0 mt-3 w-56 rounded-2xl border border-border bg-white p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 dark:bg-slate-990  backdrop-blur-md">
                 {departments.map((dept) => (
                   <Link
                     key={dept.href}
