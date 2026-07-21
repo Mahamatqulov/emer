@@ -108,7 +108,7 @@ export function Header() {
                 {t("nav.departments")}
                 <FiChevronDown className="transition-transform group-hover:rotate-180" />
               </button>
-              <div className="invisible absolute left-0 mt-3 w-56 rounded-2xl border border-border bg-white p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 dark:bg-slate-990  backdrop-blur-md">
+              <div className="invisible absolute left-0 mt-3 w-56 rounded-2xl border border-border bg-white p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 dark:bg-slate-900  backdrop-blur-md">
                 {departments.map((dept) => (
                   <Link
                     key={dept.href}
