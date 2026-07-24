@@ -340,15 +340,17 @@ function GalleryContent() {
                     </div>
                   ) : (
                     <div className="w-full aspect-video">
-                      <iframe
+                      <video
                         width="100%"
                         height="100%"
-                        src={selectedImage.videoUrl}
-                        title={selectedImage.title}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-full"
+                        src="/gallery/video1.mp4"
+                        title="Hospital Center Overview"
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
                       />
                     </div>
                   )}

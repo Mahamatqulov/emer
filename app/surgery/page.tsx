@@ -150,12 +150,12 @@ function VitalTrace({ active }: { active: boolean }) {
         strokeLinecap="round"
         strokeLinejoin="round"
         initial={{ pathLength: 0 }}
-        animate={active ? { pathLength: [0, 1] } : { pathLength: 1 }}
-        transition={
-          active
-            ? { duration: 1.8, repeat: Infinity, ease: "linear" }
-            : { duration: 0.6 }
-        }
+        animate={{ pathLength: [0, 1, 0] }}
+        transition={{
+          duration: active ? 1.8 : 3.6,
+          repeat: Infinity,
+          ease: "linear",
+        }}
       />
     </svg>
   );

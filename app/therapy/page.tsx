@@ -153,19 +153,21 @@ function ScanTrace({ active }: { active: boolean }) {
         strokeWidth={active ? 2.5 : 1.5}
         strokeLinecap="round"
       />
-      {active && (
-        <motion.rect
-          x="0"
-          y="0"
-          width="16"
-          height="32"
-          fill="#4CC9F0"
-          opacity="0.35"
-          initial={{ x: -16 }}
-          animate={{ x: [-16, 120] }}
-          transition={{ duration: 1.6, repeat: Infinity, ease: "linear" }}
-        />
-      )}
+      <motion.rect
+        x="0"
+        y="0"
+        width="16"
+        height="32"
+        fill="#4CC9F0"
+        opacity={active ? 0.35 : 0.12}
+        initial={{ x: -16 }}
+        animate={{ x: [-16, 120] }}
+        transition={{
+          duration: active ? 1.6 : 3.2,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      />
     </svg>
   );
 }

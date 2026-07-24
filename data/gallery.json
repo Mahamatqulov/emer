@@ -69,7 +69,7 @@
     "category": "Video",
     "description": "Take a virtual tour of our modern emergency department",
     "type": "video",
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    "videoUrl": "/public/gallery/video1.mp4"
   },
   {
     "id": 10,
@@ -86,5 +86,21 @@
     "description": "Introduction to our world-class medical professionals",
     "type": "video",
     "videoUrl": "https://www.youtube.com/embed/jNQXAC9IVRw"
+  },
+  {
+    "id": 12,
+    "title": "Team Meeting",
+    "category": "Team",
+    "description": "Our dedicated medical professionals in collaboration",
+    "type": "image",
+    "image": "/gallery/team6.jpg"
+  },
+  {
+    "id": 13,
+    "title": "Team Meeting",
+    "category": "Team",
+    "description": "Our dedicated medical professionals in collaboration",
+    "type": "image",
+    "image": "/gallery/team7.jpg"
   }
 ]

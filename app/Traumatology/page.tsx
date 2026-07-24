@@ -138,7 +138,9 @@ const stagger = {
 /* ------------------------------ mini pieces ------------------------------ */
 
 // X-ray style scan line over a bone silhouette, used inside occupied-scan cards.
-function ScanTrace({ active }: { active: boolean }) {
+function ScanTrace({ status }: { status: "band" | "tayyor" | "bosh" }) {
+  const isBusy = status === "band";
+
   return (
     <svg
       viewBox="0 0 120 32"
@@ -148,24 +150,26 @@ function ScanTrace({ active }: { active: boolean }) {
       <path
         d="M8 16 C8 11 14 11 14 16 C14 11 20 11 20 16 L100 16 C100 11 106 11 106 16 C106 11 112 11 112 16"
         fill="none"
-        stroke={active ? "#4CC9F0" : "currentColor"}
-        strokeOpacity={active ? 1 : 0.25}
-        strokeWidth={active ? 2.5 : 1.5}
+        stroke={isBusy ? "#4CC9F0" : "currentColor"}
+        strokeOpacity={isBusy ? 1 : 0.25}
+        strokeWidth={isBusy ? 2.5 : 1.5}
         strokeLinecap="round"
       />
-      {active && (
-        <motion.rect
-          x="0"
-          y="0"
-          width="16"
-          height="32"
-          fill="#4CC9F0"
-          opacity="0.35"
-          initial={{ x: -16 }}
-          animate={{ x: [-16, 120] }}
-          transition={{ duration: 1.6, repeat: Infinity, ease: "linear" }}
-        />
-      )}
+      <motion.rect
+        x="0"
+        y="0"
+        width="16"
+        height="32"
+        fill="#4CC9F0"
+        opacity={isBusy ? 0.35 : 0.12}
+        initial={{ x: -16 }}
+        animate={{ x: [-16, 120] }}
+        transition={{
+          duration: isBusy ? 1.6 : 3.2,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      />
     </svg>
   );
 }
@@ -249,7 +253,6 @@ function Traumatology() {
             </motion.div>
           </motion.div>
 
-          {/* LIVE X-RAY SCAN BOARD — signature element */}
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -384,7 +387,7 @@ function Traumatology() {
           </motion.div>
 
           <div className="relative">
-            <motion.path
+            <motion.svg
               d="M0 12 H860 M860 12 L850 4 M860 12 L850 20"
               fill="none"
               stroke="currentColor"

@@ -13,7 +13,13 @@
       "dept_surgery": "Surgery",
       "dept_therapy": "Therapy",
       "dept_reanimation": "Reanimation",
-      "dept_special": "Special & Auxiliary"
+      "dept_special": "Special & Auxiliary",
+      "dept_combustiology": "Combustiology",
+      "dept_PediatricPolytrauma": "Pediatric Polytrauma Department",
+      "dept_Combustiology": "Combustiology",
+      "dept_Neurosurgery": "Neurosurgery",
+      "dept_Traumatology": "Traumatology",
+      "dept_BloodTransfusion": "Blood Transfusion"
     },
     "hero": {
       "title": "Republic Emergency Medical Aid Scientific Center Fergana Branch",
@@ -69,7 +75,13 @@
       "dept_surgery": "Хирургия",
       "dept_therapy": "Терапия",
       "dept_reanimation": "Реанимация",
-      "dept_special": "Специальные Отделения"
+      "dept_special": "Специальные Отделения",
+      "dept_combustiology": "Комбустиология",
+      "dept_PediatricPolytrauma": "Отделение детской политравмы",
+      "dept_Combustiology": "Комбустиология",
+      "dept_Neurosurgery": "Нейрохирургия",
+      "dept_Traumatology": "Травматология",
+      "dept_BloodTransfusion": "Переливание крови"
     },
     "hero": {
       "title": "Республиканский научный центр экстренной медицинской помощи, филиал Фергона",
