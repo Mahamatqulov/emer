@@ -792,7 +792,7 @@ export function Hero() {
               <motion.button
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.96 }}
-                className="group relative overflow-hidden px-8 py-3.5 rounded-2xl font-semibold text-white flex items-center justify-center gap-2"
+                className="group relative overflow-hidden px-8 py-3.5 rounded-2xl font-semibold text-white flex items-center justify-center gap-2 cursor-pointer"
                 style={{
                   background: "linear-gradient(135deg,#0A84FF 0%,#0050B3 100%)",
                   boxShadow: "0 10px 36px rgba(10,132,255,.42)",

@@ -1,4 +1,4 @@
- [
+[
   {
     "id": 1,
     "title": "Emergency Department",
@@ -26,18 +26,18 @@
   {
     "id": 4,
     "title": "Medical Laboratory",
-    "category": "Facility",
+    "category": "Team",
     "description": "Advanced diagnostic laboratory with latest testing equipment",
     "type": "image",
-    "image": "/gallery/laboratory.png"
+    "image": "/gallery/team9.jpg"
   },
   {
     "id": 5,
     "title": "Pediatric Center",
-    "category": "Facility",
+    "category": "Team",
     "description": "Specialized pediatric care with child-friendly environment",
     "type": "image",
-    "image": "/gallery/pediatric.png"
+    "image": "/gallery/team5.jpg"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "category": "Facility",
     "description": "Advanced imaging center with CT, MRI, and X-ray capabilities",
     "type": "image",
-    "image": "/gallery/radiology.png"
+    "image": "/gallery/team3.jpg"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "category": "Team",
     "description": "Our dedicated medical professionals in collaboration",
     "type": "image",
-    "image": "/gallery/team-meeting.png"
+    "image": "/gallery/team1.jpg"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "category": "Team",
     "description": "Healthcare workers providing compassionate patient care",
     "type": "image",
-    "image": "/gallery/patient-care.png"
+    "image": "/gallery/team2.jpg"
   },
   {
     "id": 9,

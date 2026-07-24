@@ -39,8 +39,8 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <LanguageProvider>
-            {/* <PageLoader>{children}</PageLoader> */}
-            {children}
+            <PageLoader>{children}</PageLoader>
+            {/* {children} */}
             {process.env.NODE_ENV === "production" && <Analytics />}
           </LanguageProvider>
         </ThemeProvider>

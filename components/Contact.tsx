@@ -50,9 +50,14 @@ export function Contact() {
     setStatus("loading");
 
     try {
-      // TODO: bu yerga API chaqiruvingizni qo'ying
-      // await fetch("/api/contact", { method: "POST", body: JSON.stringify(form) });
-      await new Promise((r) => setTimeout(r, 800));
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error("Yuborishda xato");
+
       setStatus("sent");
       setForm({ name: "", email: "", message: "" });
       setTimeout(() => setStatus("idle"), 3000);
@@ -114,7 +119,6 @@ export function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-5 gap-7">
-          {/* Left — contact info cards + map */}
           <div className="lg:col-span-2 flex flex-col gap-4">
             {contactInfo.map((item, i) => {
               const Icon = item.icon;

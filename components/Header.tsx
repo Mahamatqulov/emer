@@ -104,7 +104,7 @@ export function Header() {
 
             {/* Bo'limlar dropdown — kerak bo'lsa yoqing */}
             <div className="group relative">
-              <button className="flex items-center gap-1 text-[13.5px] font-medium hover:text-primary">
+              <button className="flex items-center gap-1 text-[13.5px] font-medium hover:text-primary cursor-pointer transition-colors">
                 {t("nav.departments")}
                 <FiChevronDown className="transition-transform group-hover:rotate-180" />
               </button>
@@ -125,9 +125,9 @@ export function Header() {
           {/* Right actions */}
           <div className="flex items-center gap-2">
             {/* Til tanlash */}
-            <div className="group relative hidden md:block">
+            <div className="group relative hidden md:block ">
               <button
-                className={`flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-medium transition-colors hover:bg-primary/10 ${
+                className={`flex items-center gap-1.5 cursor-pointer rounded-full px-3 py-2 text-[13px] font-medium transition-colors hover:bg-primary/10 ${
                   scrolled ? "text-foreground" : "text-white"
                 }`}
               >
@@ -139,7 +139,7 @@ export function Header() {
                   <button
                     key={lang}
                     onClick={() => setLanguage(lang)}
-                    className={`block w-full rounded-lg px-3 py-2 text-left text-sm ${
+                    className={`block w-full rounded-lg px-3 py-2 text-left text-sm cursor-pointer ${
                       language === lang
                         ? "bg-primary/10 font-semibold text-primary"
                         : "hover:bg-muted"
@@ -156,7 +156,7 @@ export function Header() {
             </div>
 
             <button
-              className="hidden lg:flex items-center gap-1.5 px-4 py-2 rounded-full text-[13px] font-semibold text-white transition-all active:scale-95"
+              className="hidden lg:flex items-center gap-1.5 px-4 py-2 rounded-full text-[13px] font-semibold text-white transition-all active:scale-95 cursor-pointer"
               style={{
                 background: "linear-gradient(135deg,#0A84FF 0%,#0060CC 100%)",
                 boxShadow: "0 4px 16px rgba(10,132,255,.38)",

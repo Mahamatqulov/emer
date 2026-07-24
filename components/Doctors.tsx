@@ -34,8 +34,6 @@ const pulseLineVariants: Variants = {
   },
 };
 
-// Signature element: an EKG-style pulse line that "beats" on hover,
-// echoing the heartbeat motif used in the Statistics section.
 function PulseLine() {
   return (
     <svg
