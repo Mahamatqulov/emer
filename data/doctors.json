@@ -10,12 +10,12 @@
   },
   {
     "id": 2,
-    "name": "Dr. Zainab Abdullayeva",
+    "name": "Dr. Turayeva Yorqinoy Mamadaliyevna",
     "specialty": "Cardiology",
     "experience": "12+ years",
     "qualification": "MD, Cardiologist",
     "phone": "+998 90 234 56 78",
-    "image": "https://i.pravatar.cc/400?img=47"
+    "image": "/image/Turayeva Yorqinoy Mamadaliyevna.jpg"
   },
   {
     "id": 3,
@@ -54,4 +54,3 @@
     "image": "https://i.pravatar.cc/400?img=45"
   }
 ]
-

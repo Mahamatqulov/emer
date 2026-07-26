@@ -210,12 +210,12 @@ export function Hero() {
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 pt-2"
+              className="flex flex-row gap-3 sm:gap-4 pt-2"
             >
               <motion.button
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.96 }}
-                className="group relative overflow-hidden px-8 py-3.5 rounded-2xl font-semibold text-white flex items-center justify-center gap-2 cursor-pointer"
+                className="group relative overflow-hidden flex-1 sm:flex-none px-4 sm:px-8 py-3 sm:py-3.5 rounded-xl sm:rounded-2xl font-semibold text-white flex items-center justify-center gap-2 cursor-pointer"
                 style={{
                   background: "linear-gradient(135deg,#0A84FF 0%,#0050B3 100%)",
                   boxShadow: "0 10px 36px rgba(10,132,255,.42)",
@@ -228,20 +228,22 @@ export function Hero() {
                       "linear-gradient(115deg,transparent 20%,rgba(255,255,255,.35) 50%,transparent 80%)",
                   }}
                 />
-                <span className="relative">{t("hero.cta")}</span>
+                <span className="relative text-sm sm:text-base whitespace-nowrap">
+                  {t("hero.cta")}
+                </span>
               </motion.button>
 
               <motion.a
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.96 }}
                 href="tel:103"
-                className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-[#FF5C5C] to-[#E63946] px-5 py-3 font-semibold text-white shadow-lg shadow-red-500/30 transition-shadow duration-300 hover:shadow-xl hover:shadow-red-500/40"
+                className="group inline-flex items-center justify-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl bg-linear-to-r from-[#FF5C5C] to-[#E63946] px-4 py-3 sm:py-3.5 font-semibold text-white shadow-lg shadow-red-500/30 transition-shadow duration-300 hover:shadow-xl hover:shadow-red-500/40 flex-1 sm:flex-none"
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20">
-                  <FiPhone className="h-5 w-5 animate-pulse" />
+                <div className="flex h-7 w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-white/20 shrink-0">
+                  <FiPhone className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse" />
                 </div>
                 <p
-                  className="text-lg font-bold"
+                  className="text-base sm:text-lg font-bold"
                   style={{ fontFamily: "'IBM Plex Mono', monospace" }}
                 >
                   103

@@ -186,7 +186,7 @@ export function Doctors() {
                     </span>
 
                     {/* Specialty chip */}
-                    <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md border border-white/20 rounded-full px-3 py-1.5 text-white text-xs font-semibold">
+                    <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md border border-white/20 rounded-full px-3 py-1.5 text-yellow-300 text-xs font-semibold">
                       <SpecialtyIcon className="w-3.5 h-3.5" />
                       {doctor.specialty}
                     </div>

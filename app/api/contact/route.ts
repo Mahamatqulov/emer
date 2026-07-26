@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const text = `📩 *Yangi murojaat — NovaCare*\n\n👤 *Ism:* ${escapeMd(name)}\n✉️ *Email:* ${escapeMd(email)}\n💬 *Xabar:*\n${escapeMd(message)}`;
+    const text = `📩 *Yangi murojaat — Farg'onashoshilinch*\n\n👤 *Ism:* ${escapeMd(name)}\n✉️ *Email:* ${escapeMd(email)}\n💬 *Xabar:*\n${escapeMd(message)}`;
 
     const tgRes = await fetch(
       `https://api.telegram.org/bot${token}/sendMessage`,
