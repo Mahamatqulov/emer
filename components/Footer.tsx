@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { FiPhone, FiMail, FiMapPin, FiClock } from "react-icons/fi";
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
+import { FaTelegram } from "react-icons/fa6";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -68,7 +69,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <FiMail className="w-5 h-5 flex-shrink-0" />
-                <span>info@medcenter.uz</span>
+                <span>frg.fil.rshtyoim@ssv.uz</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <FiMapPin className="w-5 h-5 flex-shrink-0" />
@@ -83,7 +84,7 @@ export function Footer() {
 
           {/* Social Media */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
+            <h4 className="text-lg font-semibold mb-4">Ortimizdan yuring</h4>
             <div className="flex gap-4">
               <a
                 href="#"
@@ -93,10 +94,10 @@ export function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://t.me/shoshilinch_fargona"
                 className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/80 transition-colors"
               >
-                <FaLinkedin className="w-5 h-5" />
+                <FaTelegram className="w-5 h-5" />
               </a>
               <a
                 href="#"

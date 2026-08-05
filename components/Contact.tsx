@@ -14,18 +14,18 @@ const contactInfo = [
   },
   {
     icon: Phone,
-    label: "Emergency Hotline",
-    value: "1-800-NOVA-CARE\nAvailable 24/7",
+    label: "Tezkor aloqa",
+    value: "+998 73 244 19 63\n24 soat, haftaning 7 kuni",
   },
   {
     icon: Mail,
-    label: "General Enquiries",
-    value: "hello@novacare.health",
+    label: "Elektron pochta",
+    value: "frg.fil.rshtyoim@ssv.uz",
   },
   {
     icon: Clock,
-    label: "Visiting Hours",
-    value: "Mon–Fri 8 AM – 8 PM\nWeekends 10 AM – 6 PM",
+    label: "Ish vaqti",
+    value: "Dushanba – Juma: 08:00 – 20:00\nShanba – Yakshanba: 10:00 – 18:00",
   },
 ];
 
@@ -111,9 +111,7 @@ export function Contact() {
             transition={{ duration: 0.75, delay: 0.07, ease: [0.4, 0, 0.2, 1] }}
           >
             <h2 className="text-[38px] lg:text-[52px] font-bold tracking-[-0.035em] leading-[1.08] mb-4 text-[#111827]">
-              Get in Touch
-              <br />
-              With Our Team
+              Jamoamiz bilan bog‘laning
             </h2>
           </motion.div>
         </div>
@@ -190,10 +188,10 @@ export function Contact() {
               }}
             >
               <h3 className="text-[20px] font-bold text-[#111827] tracking-tight mb-1">
-                Send a Message
+                Xabar yuborish
               </h3>
               <p className="text-[13px] text-[#9CA3AF] mb-6">
-                Typically replied within 2 hours on business days
+                Odatda ish kunlarida 2 soat ichida javob beriladi
               </p>
 
               <form className="flex flex-col gap-3.5" onSubmit={handleSubmit}>
