@@ -14,8 +14,6 @@ import gallery from "@/data/gallery.json";
 import { FiX, FiPlay, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import Image from "next/image";
 
-// Deterministic per-card variation so the "pinned photo" wall feels hand-placed
-// rather than perfectly uniform, while staying stable across re-renders.
 const ROTATIONS = [-3, 2, -2.5, 3, -1.5, 2.5, -3, 1.5, -2, 2];
 const HEIGHTS = [260, 320, 300, 360, 280, 340, 310, 270];
 
@@ -127,7 +125,7 @@ function GalleryContent() {
           className="relative z-10 text-center px-4 max-w-3xl mx-auto"
         >
           <span className="inline-block text-xs font-semibold tracking-[0.25em] text-white/90 uppercase mb-3">
-            A look inside
+            Ichkariga nazar
           </span>
           <h1 className="text-5xl md:text-6xl font-black tracking-tight text-white mb-4 drop-shadow-sm">
             Gallery
@@ -139,7 +137,7 @@ function GalleryContent() {
             className="h-1 bg-primary rounded-full mx-auto mb-6"
           />
           <p className="text-lg text-white/85 max-w-2xl mx-auto">
-            Explore our state-of-the-art facilities and our dedicated team
+            Eng zamonaviy infratuzilmamiz va fidoyi jamoamiz bilan tanishing.
           </p>
         </motion.div>
       </div>

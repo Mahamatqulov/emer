@@ -116,8 +116,7 @@ export function Doctors() {
           className="text-center mb-16"
         >
           <span className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-accent mb-3">
-            <span className="h-px w-6 bg-accent" />
-            Our Specialists
+            Mutaxassislarimiz
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             {t("doctors.title")}

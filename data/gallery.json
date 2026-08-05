@@ -1,105 +1,105 @@
 [
   {
     "id": 1,
-    "title": "Emergency Department",
-    "category": "Facility",
-    "description": "State-of-the-art emergency facilities with advanced monitoring systems",
+    "title": "Tez yordam bo'limi",
+    "category": "Muassasa",
+    "description": "Ilg'or monitoring tizimlari bilan jihozlangan zamonaviy tez yordam bo'limi",
     "type": "image",
     "image": "/gallery/emergency-dept.png"
   },
   {
     "id": 2,
-    "title": "Surgical Suite",
-    "category": "Facility",
-    "description": "Modern operating rooms equipped with latest surgical technology",
+    "title": "Jarrohlik bloki",
+    "category": "Muassasa",
+    "description": "Eng so'nggi jarrohlik texnologiyalari bilan jihozlangan zamonaviy operatsion xonalar",
     "type": "image",
     "image": "/gallery/surgical-suite.png"
   },
   {
     "id": 3,
-    "title": "Patient Recovery Ward",
-    "category": "Facility",
-    "description": "Comfortable and well-equipped patient recovery area",
+    "title": "Bemorlar reabilitatsiya bo'limi",
+    "category": "Muassasa",
+    "description": "Qulay va to'liq jihozlangan bemorlarni tiklash xonasi",
     "type": "image",
     "image": "/gallery/recovery-ward.png"
   },
   {
     "id": 4,
-    "title": "Medical Laboratory",
-    "category": "Team",
-    "description": "Advanced diagnostic laboratory with latest testing equipment",
+    "title": "Tibbiy laboratoriya",
+    "category": "Jamoa",
+    "description": "Eng so'nggi tekshiruv uskunalari bilan jihozlangan ilg'or diagnostika laboratoriyasi",
     "type": "image",
     "image": "/gallery/team9.jpg"
   },
   {
     "id": 5,
-    "title": "Pediatric Center",
-    "category": "Team",
-    "description": "Specialized pediatric care with child-friendly environment",
+    "title": "Bolalar markazi",
+    "category": "Jamoa",
+    "description": "Bolalarga qulay muhitda ko'rsatiladigan maxsus pediatriya xizmati",
     "type": "image",
     "image": "/gallery/team5.jpg"
   },
   {
     "id": 6,
-    "title": "Radiology Department",
-    "category": "Facility",
-    "description": "Advanced imaging center with CT, MRI, and X-ray capabilities",
+    "title": "Radiologiya bo'limi",
+    "category": "Muassasa",
+    "description": "KT, MRT va rentgen imkoniyatlariga ega ilg'or tasvirlash markazi",
     "type": "image",
     "image": "/gallery/team3.jpg"
   },
   {
     "id": 7,
-    "title": "Team Meeting",
-    "category": "Team",
-    "description": "Our dedicated medical professionals in collaboration",
+    "title": "Jamoa yig'ilishi",
+    "category": "Jamoa",
+    "description": "Fidoyi tibbiyot mutaxassislarimiz hamkorlikda",
     "type": "image",
     "image": "/gallery/team1.jpg"
   },
   {
     "id": 8,
-    "title": "Patient Care",
-    "category": "Team",
-    "description": "Healthcare workers providing compassionate patient care",
+    "title": "Bemorlarga g'amxo'rlik",
+    "category": "Jamoa",
+    "description": "Sog'liqni saqlash xodimlari bemorlarga mehr bilan yordam bermoqda",
     "type": "image",
     "image": "/gallery/team2.jpg"
   },
   {
     "id": 9,
-    "title": "Virtual Tour: Emergency Department",
+    "title": "Virtual sayohat: Tez yordam bo'limi",
     "category": "Video",
-    "description": "Take a virtual tour of our modern emergency department",
+    "description": "Zamonaviy tez yordam bo'limimiz bo'ylab virtual sayohat qiling",
     "type": "video",
     "videoUrl": "/public/gallery/video1.mp4"
   },
   {
     "id": 10,
-    "title": "Patient Testimonial",
+    "title": "Bemor fikri",
     "category": "Video",
-    "description": "Hear from one of our satisfied patients about their experience",
+    "description": "Bizning mamnun bemorlarimizdan birining tajribasi haqida hikoyasi",
     "type": "video",
     "videoUrl": "https://www.youtube.com/embed/9bZkp7q19f0"
   },
   {
     "id": 11,
-    "title": "Meet Our Medical Team",
+    "title": "Tibbiyot jamoamiz bilan tanishing",
     "category": "Video",
-    "description": "Introduction to our world-class medical professionals",
+    "description": "Yuqori toifali tibbiyot mutaxassislarimiz bilan tanishuv",
     "type": "video",
     "videoUrl": "https://www.youtube.com/embed/jNQXAC9IVRw"
   },
   {
     "id": 12,
-    "title": "Team Meeting",
-    "category": "Team",
-    "description": "Our dedicated medical professionals in collaboration",
+    "title": "Jamoa yig'ilishi",
+    "category": "Jamoa",
+    "description": "Fidoyi tibbiyot mutaxassislarimiz hamkorlikda",
     "type": "image",
     "image": "/gallery/team6.jpg"
   },
   {
     "id": 13,
-    "title": "Team Meeting",
-    "category": "Team",
-    "description": "Our dedicated medical professionals in collaboration",
+    "title": "Jamoa yig'ilishi",
+    "category": "Jamoa",
+    "description": "Fidoyi tibbiyot mutaxassislarimiz hamkorlikda",
     "type": "image",
     "image": "/gallery/team7.jpg"
   }

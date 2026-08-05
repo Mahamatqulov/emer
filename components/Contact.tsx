@@ -99,7 +99,7 @@ export function Contact() {
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#0A84FF]" />
               <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#0A84FF]">
-                Contact Us
+                Biz bilan bog'lanish
               </span>
             </div>
           </motion.div>

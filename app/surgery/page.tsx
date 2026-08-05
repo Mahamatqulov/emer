@@ -385,7 +385,7 @@ function Surgery() {
           </motion.div>
 
           <div className="relative">
-            <motion.path
+            <motion.svg
               d="M0 12 H860 M860 12 L850 4 M860 12 L850 20"
               fill="none"
               stroke="currentColor"

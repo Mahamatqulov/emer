@@ -4,6 +4,7 @@ import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { FiPhone, FiMail, FiMapPin, FiClock } from "react-icons/fi";
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
+import Link from "next/link";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -15,43 +16,35 @@ export function Footer() {
           {/* About */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">M</span>
-              </div>
-              <h3 className="text-xl font-bold">MedCenter</h3>
+              <Link
+                href="/"
+                className="flex items-center gap-2.5 flex-shrink-0"
+              >
+                <div className="w-36 h-16 rounded-xl flex items-center justify-center text-white font-bold">
+                  <img
+                    src="/image/shoshilinch.png"
+                    alt="Logotip"
+                    className="w-36 h-14"
+                  />
+                </div>
+              </Link>
             </div>
             <p className="text-gray-400 text-sm">
-              Providing premium emergency medical care and comprehensive
-              healthcare services 24/7.
+              Yuqori sifatli shoshilinch tibbiy yordam va keng qamrovli tibbiy
+              xizmatlarni tunu-kun (24/7) ko‘rsatish.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">Tezkor havolalar</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  About Us
-                </a>
-              </li>
               <li>
                 <a
                   href="#services"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Services
+                  Xizmatlar
                 </a>
               </li>
               <li>
@@ -59,7 +52,7 @@ export function Footer() {
                   href="#doctors"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Our Doctors
+                  Shifokorlarimiz
                 </a>
               </li>
             </ul>
@@ -71,7 +64,7 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-3 text-gray-400">
                 <FiPhone className="w-5 h-5 flex-shrink-0" />
-                <span>+998 (71) 200-00-77</span>
+                <span>+998 73 244 19 63</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <FiMail className="w-5 h-5 flex-shrink-0" />
@@ -116,7 +109,10 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 py-8 text-center text-sm text-gray-400">
-          <p>&copy; 2024 Emergency Medical Center. All rights reserved.</p>
+          <p>
+            &copy; 2026 yilgi Shoshilinch tibbiy yordam markazi. Barcha huquqlar
+            himoyalangan.
+          </p>
         </div>
       </div>
     </footer>

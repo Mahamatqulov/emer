@@ -95,7 +95,7 @@ export function Statistics() {
             <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
           </span>
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            {t("stats.eyebrow") || "Ishonch raqamlarda"}
+            {t("Ishonch raqamlarda") || "Ishonch raqamlarda"}
           </span>
         </motion.div>
 

@@ -189,7 +189,7 @@ export function Hero() {
                 <span className="relative inline-flex rounded-full w-2.5 h-2.5 bg-[#22D3A6]" />
               </span>
               <span className="text-xs font-semibold text-white tracking-wide">
-                {t("hero.badge") || "24/7 Shoshilinch yordam"}
+                {t("24/7 Shoshilinch yordam") || "24/7 Shoshilinch yordam"}
               </span>
             </motion.div>
 

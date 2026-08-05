@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "name": "Dr. Alisher Karimov",
-    "specialty": "Emergency Medicine",
+    "name": "Dr. MAXMUDOV XUSANBOY ABIDJANOVICH",
+    "specialty": "Anesthesiology resuscitation",
     "experience": "15+ years",
     "qualification": "MD, Board Certified",
     "phone": "+998 90 123 45 67",
-    "image": "https://i.pravatar.cc/400?img=12"
+    "image": "/image/d7.jpg"
   },
   {
     "id": 2,
@@ -19,38 +19,56 @@
   },
   {
     "id": 3,
-    "name": "Dr. Rustam Shodmonov",
+    "name": "Dr. AXRAROV BAXODIR MIRZALIYEVICH",
     "specialty": "Surgery",
     "experience": "18+ years",
     "qualification": "MD, Surgeon",
     "phone": "+998 90 345 67 89",
-    "image": "https://i.pravatar.cc/400?img=33"
+    "image": "/image/d3.jpg"
   },
   {
     "id": 4,
-    "name": "Dr. Munira Hasanova",
+    "name": "Dr. KIM KLARA",
     "specialty": "Pediatrics",
     "experience": "10+ years",
     "qualification": "MD, Pediatrician",
     "phone": "+998 90 456 78 90",
-    "image": "https://i.pravatar.cc/400?img=44"
+    "image": "/image/d4.jpg"
   },
   {
     "id": 5,
-    "name": "Dr. Timur Gaziev",
+    "name": "Dr. SARIQOV ISLOMBEK ZO'XRIDINOVICH",
     "specialty": "Orthopedics",
     "experience": "14+ years",
     "qualification": "MD, Orthopedic Surgeon",
     "phone": "+998 90 567 89 01",
-    "image": "https://i.pravatar.cc/400?img=51"
+    "image": "/image/d1.jpg"
   },
   {
     "id": 6,
-    "name": "Dr. Farida Rahimova",
+    "name": "Dr. TILLAKARIYEV TULKUNJAN KAMILDJANOVICH",
     "specialty": "Neurology",
     "experience": "11+ years",
     "qualification": "MD, Neurologist",
     "phone": "+998 90 678 90 12",
-    "image": "https://i.pravatar.cc/400?img=45"
+    "image": "/image/d6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Dr. OMONOV NURIDDIN NOSIROVICH",
+    "specialty": "Orthopedics",
+    "experience": "14+ years",
+    "qualification": "MD, Orthopedic Surgeon",
+    "phone": "+998 90 567 89 01",
+    "image": "/image/d2.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Dr. ORIPOV DAVLATBEK URAIMOVICH",
+    "specialty": "Kombustiolog",
+    "experience": "14+ years",
+    "qualification": "MD, Kombustiolog",
+    "phone": "+998 90 567 89 01",
+    "image": "/image/d5.jpg"
   }
 ]

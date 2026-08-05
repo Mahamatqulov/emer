@@ -10,7 +10,7 @@ import PageLoader from "@/components/PageLoader";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Emergency Medical Center - Quality Healthcare",
+  title: "Respublika Shoshilinch Tibbiy Yordam Ilmiy Markazi Farg'ona Filiali",
   description:
     "Premier emergency medical center providing 24/7 emergency services, general healthcare, and specialized medical treatment for all ages.",
   generator: "",

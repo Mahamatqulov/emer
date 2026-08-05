@@ -69,21 +69,25 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
             <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold"
-              style={{
-                background: "linear-gradient(135deg,#0A84FF 0%,#0050CC 100%)",
-                boxShadow: "0 4px 14px rgba(10,132,255,.45)",
-              }}
+              className="w-36 h-16 rounded-xl flex items-center justify-center text-white font-bold"
+              // style={{
+              //   background: "linear-gradient(135deg,#0A84FF 0%,#0050CC 100%)",
+              //   boxShadow: "0 4px 14px rgba(10,132,255,.45)",
+              // }}
             >
-              <HeartPulse size={17} strokeWidth={2.5} />
+              <img
+                src="/image/shoshilinch.png"
+                alt="Logotip"
+                className="w-36 h-14"
+              />
             </div>
-            <span
+            {/* <span
               className={`hidden sm:block font-bold text-base tracking-tight transition-colors duration-500 ${
                 scrolled ? "text-foreground" : "text-white"
               }`}
             >
-              Med<span className="text-primary">Center</span>
-            </span>
+              Farg'ona Shoshilinch
+            </span> */}
           </Link>
 
           {/* Desktop nav */}
