@@ -19,7 +19,17 @@
       "dept_Combustiology": "Combustiology",
       "dept_Neurosurgery": "Neurosurgery",
       "dept_Traumatology": "Traumatology",
-      "dept_BloodTransfusion": "Blood Transfusion"
+      "dept_BloodTransfusion": "Blood Transfusion",
+      "dept_Toxicology": "Toxicology",
+      "dept_Urology": "Urology",
+      "dept_Cardiology": "Cardiology",
+      "dept_Gynecology": "Gynecology",
+      "dept_Rehabilitation": "Rehabilitation",
+      "dept_PediatricSurgery": "Pediatric Surgery",
+      "dept_PediatricICU": "Pediatric ICU",
+      "dept_IntensiveCare": "Intensive Care Unit",
+      "dept_Surgery2": "Surgery 2",
+      "dept_Administration": "Administration"
     },
     "hero": {
       "title": "Republic Emergency Medical Aid Scientific Center Fergana Branch",
@@ -81,7 +91,17 @@
       "dept_Combustiology": "Комбустиология",
       "dept_Neurosurgery": "Нейрохирургия",
       "dept_Traumatology": "Травматология",
-      "dept_BloodTransfusion": "Переливание крови"
+      "dept_BloodTransfusion": "Переливание крови",
+      "dept_Toxicology": "Токсикология",
+      "dept_Urology": "Урология",
+      "dept_Cardiology": "Кардиология",
+      "dept_Gynecology": "Гинекология",
+      "dept_Rehabilitation": "Реабилитация",
+      "dept_PediatricSurgery": "Детская хирургия",
+      "dept_PediatricICU": "Детская реанимация",
+      "dept_IntensiveCare": "Реанимация и интенсивная терапия",
+      "dept_Surgery2": "Хирургия-2",
+      "dept_Administration": "Администрация"
     },
     "hero": {
       "title": "Республиканский научный центр экстренной медицинской помощи, филиал Фергона",
@@ -143,7 +163,17 @@
       "dept_Combustiology": "Kombustiologiya",
       "dept_Neurosurgery": "Nevroxirurgiya",
       "dept_Traumatology": "Travmatologiya",
-      "dept_BloodTransfusion": "Qon Qo'yish"
+      "dept_BloodTransfusion": "Qon Qo'yish",
+      "dept_Toxicology": "Toksikologiya",
+      "dept_Urology": "Urologiya",
+      "dept_Cardiology": "Kardiologiya",
+      "dept_Gynecology": "Ginekologiya",
+      "dept_Rehabilitation": "Reabilitatsiya",
+      "dept_PediatricSurgery": "Bolalar jarrohligi",
+      "dept_PediatricICU": "Bolalar reanimatsiyasi",
+      "dept_IntensiveCare": "Reanimatsiya va intensiv terapiya",
+      "dept_Surgery2": "2-Jarrohlik",
+      "dept_Administration": "Ma’muriyat"
     },
     "hero": {
       "title": "Respublika Shoshilinch Tibbiy Yordam Ilmiy Markazi Farg'ona Filiali",

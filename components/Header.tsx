@@ -38,6 +38,7 @@ export function Header() {
 
   const departments = [
     { label: t("nav.dept_surgery"), href: "/surgery" },
+    { label: t("nav.dept_Surgery2"), href: "/Surgery2" },
     { label: t("nav.dept_therapy"), href: "/therapy" },
     { label: t("nav.dept_reanimation"), href: "/reanimation" },
     { label: t("nav.dept_special"), href: "/special" },
@@ -46,6 +47,15 @@ export function Header() {
     { label: t("nav.dept_Combustiology"), href: "/Combustiology" },
     { label: t("nav.dept_Traumatology"), href: "/Traumatology" },
     { label: t("nav.dept_BloodTransfusion"), href: "/BloodTransfusion" },
+    { label: t("nav.dept_Toxicology"), href: "/Toxicology" },
+    { label: t("nav.dept_Urology"), href: "/Urology" },
+    { label: t("nav.dept_Cardiology"), href: "/Cardiology" },
+    { label: t("nav.dept_Gynecology"), href: "/Gynecology" },
+    { label: t("nav.dept_Rehabilitation"), href: "/Rehabilitation" },
+    { label: t("nav.dept_PediatricSurgery"), href: "/PediatricSurgery" },
+    { label: t("nav.dept_PediatricICU"), href: "/PediatricICU" },
+    { label: t("nav.dept_IntensiveCare"), href: "/IntensiveCare" },
+    { label: t("nav.dept_Administration"), href: "/Administration" },
   ];
 
   return (
@@ -110,9 +120,9 @@ export function Header() {
             <div className="group relative">
               <button className="flex items-center gap-1 text-[13.5px] font-medium hover:text-primary cursor-pointer transition-colors">
                 {t("nav.departments")}
-                <FiChevronDown className="transition-transform group-hover:rotate-180" />
+                <FiChevronDown className="transition-transform group-hover:rotate-180 " />
               </button>
-              <div className="invisible absolute left-0 mt-3 w-56 rounded-2xl border border-border bg-white p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 dark:bg-slate-900  backdrop-blur-md">
+              <div className="invisible absolute left-0 mt-3 w-[420px] grid grid-cols-2 gap-1 rounded-2xl border border-border bg-white p-2 opacity-0 shadow-xl transition-all group-hover:visible group-hover:opacity-100 dark:bg-slate-900 backdrop-blur-md">
                 {departments.map((dept) => (
                   <Link
                     key={dept.href}
