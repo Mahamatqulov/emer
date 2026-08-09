@@ -231,7 +231,7 @@ function Therapy() {
 
             <motion.div variants={fadeUp} className="mt-9 flex flex-wrap gap-4">
               <a
-                href="#contact"
+                href="/#contact"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-transform hover:scale-[1.02]"
               >
                 Konsultatsiyaga yozilish
@@ -383,7 +383,7 @@ function Therapy() {
           </motion.div>
 
           <div className="relative">
-            <motion.path
+            <motion.svg
               d="M0 12 H860 M860 12 L850 4 M860 12 L850 20"
               fill="none"
               stroke="currentColor"

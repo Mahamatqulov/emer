@@ -236,7 +236,7 @@ function Traumatology() {
 
             <motion.div variants={fadeUp} className="mt-9 flex flex-wrap gap-4">
               <a
-                href="#contact"
+                href="/#contact"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-transform hover:scale-[1.02]"
               >
                 Konsultatsiyaga yozilish

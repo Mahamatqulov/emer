@@ -72,6 +72,7 @@ export function Contact() {
 
   return (
     <section
+      id="contact"
       className="py-24 px-6 lg:px-8"
       style={{
         background: "linear-gradient(#EBF4FF 0%, #F2F5FA 100%)",
