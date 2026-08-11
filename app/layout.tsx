@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-black-900">
       <body
-        className={`${inter.className} antialiased bg-background text-foreground`}
+        className={`${inter.className} antialiased bg-black-900 text-foreground`}
       >
         <ThemeProvider>
           <LanguageProvider>
