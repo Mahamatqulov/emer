@@ -37,6 +37,7 @@ export function Header() {
   ];
 
   const departments = [
+    { label: t("nav.dept_Administration"), href: "/Administration" },
     { label: t("nav.dept_surgery"), href: "/surgery" },
     { label: t("nav.dept_Surgery2"), href: "/Surgery2" },
     { label: t("nav.dept_therapy"), href: "/therapy" },
@@ -55,7 +56,9 @@ export function Header() {
     { label: t("nav.dept_PediatricSurgery"), href: "/PediatricSurgery" },
     { label: t("nav.dept_PediatricICU"), href: "/PediatricICU" },
     { label: t("nav.dept_IntensiveCare"), href: "/IntensiveCare" },
-    { label: t("nav.dept_Administration"), href: "/Administration" },
+    { label: t("nav.dept_Neurology"), href: "/Neurology" },
+    { label: t("nav.dept_Laboratory"), href: "/Laboratory" },
+    { label: t("nav.dept_Pharmacy"), href: "/Pharmacy" },
   ];
 
   return (
@@ -238,16 +241,18 @@ export function Header() {
                     exit={{ height: 0 }}
                     className="overflow-hidden bg-muted/40 rounded-xl"
                   >
-                    {departments.map((dept) => (
-                      <Link
-                        key={dept.href}
-                        href={dept.href}
-                        onClick={() => setIsOpen(false)}
-                        className="block px-6 py-2.5 text-sm hover:text-primary"
-                      >
-                        {dept.label}
-                      </Link>
-                    ))}
+                    <div className=" max-h-[45vh] overflow-y-auto overscroll-contain py-1 scrollbar-thin scrollbar-thumb-primary/30 scrollbar-track-transparent ">
+                      {departments.map((dept) => (
+                        <Link
+                          key={dept.href}
+                          href={dept.href}
+                          onClick={() => setIsOpen(false)}
+                          className="block px-6 py-2.5 text-sm hover:text-primary"
+                        >
+                          {dept.label}
+                        </Link>
+                      ))}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

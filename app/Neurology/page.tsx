@@ -5,77 +5,97 @@ import { Header } from "@/components/Header";
 import { motion, easeOut, Variants } from "framer-motion";
 import {
   Brain,
+  Waves,
+  Zap,
   Activity,
-  Dumbbell,
-  Wind,
-  MessageCircle,
-  Baby,
-  TrendingUp,
+  ShieldCheck,
   Timer,
   ClipboardCheck,
   PhoneCall,
   ArrowRight,
 } from "lucide-react";
 
-const procedures = [
-  {
-    icon: Brain,
-    title: "Nevrologik reabilitatsiya",
-    desc: "Insult va bosh miya jarohatlaridan keyingi funksiyalarni tiklash.",
-  },
+const channels = [
+  { name: "Fp1-F3", amp: 10, phase: 0 },
+  { name: "F3-C3", amp: 16, phase: 0.6 },
+  { name: "C3-P3", amp: 8, phase: 1.2 },
+  { name: "P3-O1", amp: 13, phase: 1.9 },
+];
+
+function buildWave(amp: number, phase: number) {
+  const points: string[] = [];
+  const width = 300;
+  const steps = 60;
+  for (let i = 0; i <= steps; i++) {
+    const x = (i / steps) * width;
+    const y =
+      Math.sin(i * 0.55 + phase) * amp * 0.5 +
+      Math.sin(i * 1.3 + phase * 2) * amp * 0.25 +
+      Math.sin(i * 0.15 + phase) * amp * 0.3;
+    points.push(`${x.toFixed(1)},${y.toFixed(1)}`);
+  }
+  return "M" + points.join(" L");
+}
+
+const services = [
   {
     icon: Activity,
-    title: "Jarrohlikdan keyingi tiklanish",
-    desc: "Operatsiyadan so‘ng tez va xavfsiz tiklanish dasturlari.",
+    title: "Insult va qon aylanish buzilishlari",
+    desc: "Miya qon aylanishi patologiyalarini tezkor diagnostika va davolash.",
   },
   {
-    icon: Dumbbell,
-    title: "Harakat apparati reabilitatsiyasi",
-    desc: "Suyak-mushak tizimi shikastlanishlaridan keyingi mashqlar dasturi.",
+    icon: Zap,
+    title: "Epilepsiya va tutqanoq holatlari",
+    desc: "EEG monitoring asosida tutqanoq turini aniqlash va terapiya tanlash.",
   },
   {
-    icon: Wind,
-    title: "Nafas reabilitatsiyasi",
-    desc: "O‘pka funksiyasini tiklashga qaratilgan nafas mashqlari.",
+    icon: Brain,
+    title: "Bosh og‘rig‘i va migren",
+    desc: "Surunkali va kuchli bosh og‘riqlarining sababini aniqlash.",
   },
   {
-    icon: MessageCircle,
-    title: "Nutq va yutish reabilitatsiyasi",
-    desc: "Nutq buzilishlari va yutish funksiyasini tiklash mashg‘ulotlari.",
+    icon: Waves,
+    title: "Perifer nerv kasalliklari",
+    desc: "Neyropatiya va nerv tolalari shikastlanishlarini davolash.",
   },
   {
-    icon: Baby,
-    title: "Bolalar reabilitatsiyasi",
-    desc: "Rivojlanish va harakat buzilishlarida bolalarga ixtisoslashgan yordam.",
+    icon: ClipboardCheck,
+    title: "Harakat buzilishlari",
+    desc: "Parkinson va boshqa ekstrapiramidal kasalliklar bo‘yicha nazorat.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "EEG va EMG diagnostikasi",
+    desc: "Miya va mushak-nerv faoliyatini elektrofiziologik baholash.",
   },
 ];
 
 const phases = [
   {
-    tag: "01 / Baholash",
-    title: "Boshlang‘ich diagnostika",
+    tag: "01 / Diagnostika",
+    title: "Nevrologik ko‘rik va EEG",
     points: [
-      "Funksional holatni baholash",
-      "Harakat diapazonini o‘lchash",
-      "Individual reja tuzish",
+      "Batafsil nevrologik status",
+      "Elektroensefalografiya (EEG)",
+      "Zarur holatda MRI yo‘naltirish",
     ],
   },
   {
-    tag: "02 / Reabilitatsiya",
-    title: "Faol mashg‘ulotlar",
+    tag: "02 / Davolash",
+    title: "Individual terapiya rejasi",
     points: [
-      "Fizioterapiya va mashqlar",
-      "Progressni muntazam kuzatuv",
-      "Multidisiplinar yondashuv",
+      "Dorivor terapiya tanlash",
+      "Holat dinamikasini kuzatish",
+      "Zarur holatda jarrohlikka yo‘naltirish",
     ],
   },
   {
-    tag: "03 / Keyin",
-    title: "Mustahkamlash",
+    tag: "03 / Kuzatuv",
+    title: "Reabilitatsiya va nazorat",
     points: [
-      "Uy sharoitida mashqlar dasturi",
-      "Davriy nazorat tekshiruvlari",
-      "Kundalik hayotga qaytish",
+      "Funksional tiklanish dasturi",
+      "Muntazam nevrologik tekshiruv",
+      "Uzoq muddatli kuzatuv rejasi",
     ],
   },
 ];
@@ -86,95 +106,75 @@ const fadeUp: Variants = {
 };
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
-const R = 90;
-const CIRC = 2 * Math.PI * R;
-
-function ProgressRingPanel() {
+function EEGPanel() {
   return (
     <div className="relative rounded-2xl border border-background/10 bg-black/40 overflow-hidden">
       <div className="flex items-center justify-between px-6 pt-5">
         <span className="font-mono text-xs tracking-[0.2em] text-white/50 uppercase">
-          Tiklanish jarayoni monitoringi
+          EEG monitoring — jonli signal
         </span>
         <span className="flex items-center gap-2 text-xs font-mono text-[#7DD3FC]">
-          <TrendingUp className="h-3.5 w-3.5" />
-          progressda
+          <Activity className="h-3.5 w-3.5" />
+          yozib olinmoqda
         </span>
       </div>
 
       <div className="grid md:grid-cols-[1fr_260px]">
-        <div className="relative h-[280px] flex items-center justify-center">
-          <svg viewBox="0 0 300 280" className="w-full h-full">
-            <circle
-              cx={150}
-              cy={140}
-              r={R}
-              fill="none"
-              stroke="#ffffff"
-              strokeOpacity={0.1}
-              strokeWidth={14}
-            />
-            <motion.circle
-              cx={150}
-              cy={140}
-              r={R}
-              fill="none"
-              stroke="#7DD3FC"
-              strokeWidth={14}
-              strokeLinecap="round"
-              strokeDasharray={CIRC}
-              transform="rotate(-90 150 140)"
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 0.72 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.6, ease: "easeOut" }}
-            />
-            <text
-              x={150}
-              y={132}
-              fill="#ffffff"
-              fontSize={38}
-              fontWeight={700}
-              textAnchor="middle"
-              fontFamily="monospace"
+        <div className="relative h-[280px] px-6 py-5 flex flex-col justify-between">
+          {channels.map((c, i) => (
+            <div
+              key={c.name}
+              className="relative flex items-center gap-3 h-1/4"
             >
-              72%
-            </text>
-            <text
-              x={150}
-              y={158}
-              fill="#ffffff"
-              fillOpacity={0.4}
-              fontSize={11}
-              textAnchor="middle"
-              fontFamily="monospace"
-            >
-              tiklanish darajasi
-            </text>
-          </svg>
+              <span className="w-14 shrink-0 text-[10px] font-mono text-white/40">
+                {c.name}
+              </span>
+              <svg
+                viewBox="-2 -20 304 40"
+                className="w-full h-10 overflow-visible"
+              >
+                <motion.path
+                  d={buildWave(c.amp, c.phase)}
+                  fill="none"
+                  stroke="#7DD3FC"
+                  strokeWidth={1.4}
+                  strokeLinejoin="round"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ pathLength: 1, opacity: 1 }}
+                  transition={{ duration: 1.6, delay: i * 0.15, ease: easeOut }}
+                />
+              </svg>
+            </div>
+          ))}
+          <motion.div
+            className="pointer-events-none absolute inset-y-0 w-px bg-[#7DD3FC]/50"
+            initial={{ left: "0%" }}
+            animate={{ left: ["0%", "100%"] }}
+            transition={{ duration: 2.6, repeat: Infinity, ease: "linear" }}
+          />
         </div>
 
         <div className="border-t md:border-t-0 md:border-l border-background/10 px-6 py-5 font-mono text-xs text-white/60 space-y-3">
           <div className="flex justify-between">
-            <span className="text-white/40">Boshlang‘ich baho</span>
-            <span>34%</span>
+            <span className="text-white/40">Chastota</span>
+            <span className="text-[#7DD3FC]">9.8 Hz</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-white/40">Joriy ko‘rsatkich</span>
-            <span className="text-[#7DD3FC]">72%</span>
+            <span className="text-white/40">Amplituda</span>
+            <span className="text-[#7DD3FC]">34 µV</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-white/40">Maqsad</span>
-            <span>90%</span>
+            <span className="text-white/40">Kanallar</span>
+            <span>4 / 19 faol</span>
           </div>
           <div className="h-px bg-white/10 my-3" />
           <div className="flex justify-between">
-            <span className="text-white/40">Bosqich</span>
-            <span className="text-[#7DD3FC]">faol davolash</span>
+            <span className="text-white/40">Ritm</span>
+            <span className="text-[#7DD3FC]">alfa-dominant</span>
           </div>
           <div className="flex justify-between">
             <span className="text-white/40">Holat</span>
-            <span className="text-[#7DD3FC]">ijobiy dinamika</span>
+            <span className="text-[#7DD3FC]">barqaror</span>
           </div>
         </div>
       </div>
@@ -182,13 +182,10 @@ function ProgressRingPanel() {
   );
 }
 
-function Rehabilitation() {
+function Neurology() {
   return (
     <div className="bg-background text-white">
-      <section
-        id="rehabilitation"
-        className="relative overflow-hidden pt-40 pb-20"
-      >
+      <section id="neurology" className="relative overflow-hidden pt-40 pb-20">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.04]"
           style={{
@@ -218,22 +215,22 @@ function Rehabilitation() {
             >
               <span className="h-px w-8 bg-gradient-to-r from-accent to-transparent" />
               <span className="font-mono text-xs tracking-[0.2em] text-accent uppercase">
-                Reabilitatsiya blok
+                Nerv tizimi bloki
               </span>
             </motion.div>
             <motion.h1
               variants={fadeUp}
               className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]"
             >
-              2-Terapiya bo‘limi
+              Nevrologiya bo‘limi
             </motion.h1>
             <motion.p
               variants={fadeUp}
               className="text-lg text-white/70 leading-8 max-w-2xl"
             >
-              Kasallik yoki jarohatdan so‘ng bemorning funksional
-              qobiliyatlarini individual dastur asosida bosqichma-bosqich
-              tiklaydigan ixtisoslashtirilgan bo‘lim.
+              Markaziy va perifer nerv tizimi kasalliklarini elektrofiziologik
+              diagnostika va zamonaviy terapiya usullari asosida davolaydigan
+              ixtisoslashtirilgan bo‘lim.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-9 flex flex-wrap gap-4">
               <a
@@ -243,7 +240,6 @@ function Rehabilitation() {
                 Konsultatsiyaga yozilish
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
-
               <a
                 href="tel:1050"
                 className="inline-flex items-center gap-2 rounded-full border border-background/20 px-6 py-3 text-sm font-medium hover:bg-background/10 transition-colors"
@@ -261,7 +257,7 @@ function Rehabilitation() {
             variants={stagger}
             className="mt-20"
           >
-            <ProgressRingPanel />
+            <EEGPanel />
           </motion.div>
         </div>
       </section>
@@ -283,24 +279,27 @@ function Rehabilitation() {
                 Qanday holatlarni davolaymiz
               </h2>
             </div>
+            <span className="hidden md:block text-xs font-mono text-white/40 shrink-0">
+              → yon tomonga suring
+            </span>
           </motion.div>
         </div>
         <div className="max-w-7xl mx-auto pl-4">
           <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 pr-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            {procedures.map((p) => (
+            {services.map((s) => (
               <div
-                key={p.title}
+                key={s.title}
                 className="snap-start shrink-0 w-[260px] rounded-2xl border border-white/10 bg-black p-6 relative overflow-hidden shadow-lg hover:shadow-2xl hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
               >
                 <span className="absolute top-0 left-6 h-px w-10 bg-accent/60" />
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 mb-5">
-                  <p.icon
+                  <s.icon
                     className="h-5.5 w-5.5 text-accent"
                     strokeWidth={1.5}
                   />
                 </span>
-                <h3 className="font-semibold mb-2">{p.title}</h3>
-                <p className="text-sm text-white/60 leading-6">{p.desc}</p>
+                <h3 className="font-semibold mb-2">{s.title}</h3>
+                <p className="text-sm text-white/60 leading-6">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -360,11 +359,11 @@ function Rehabilitation() {
       <section className="py-16 border-t border-background/10">
         <div className="max-w-7xl mx-auto px-4 grid sm:grid-cols-3 gap-8">
           {[
-            { icon: Timer, label: "Individual reabilitatsiya jadvali" },
-            { icon: TrendingUp, label: "Progressni muntazam kuzatuv" },
+            { icon: Timer, label: "24/7 shoshilinch nevrologik yordam" },
+            { icon: Waves, label: "EEG va EMG diagnostikasi" },
             {
               icon: ClipboardCheck,
-              label: "Multidisiplinar mutaxassislar jamoasi",
+              label: "Individual reabilitatsiya dasturi",
             },
           ].map((t) => (
             <div key={t.label} className="flex items-center gap-3">
@@ -390,14 +389,13 @@ function Rehabilitation() {
             />
             <div className="relative">
               <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                Reabilitatsiya rejasi kerakmi?
+                Nevrologik maslahat kerakmi?
               </h2>
               <p className="text-white/60 max-w-xl">
-                Mutaxassislarimiz bilan bog‘laning — holatingizga mos individual
-                dastur tuzib beramiz.
+                Nevrologlarimiz bilan bog‘laning — holatingizni ko‘rib chiqib,
+                keyingi qadamni belgilab beramiz.
               </p>
             </div>
-
             <a
               href="tel:1050"
               className="relative inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-accent-foreground shrink-0"
@@ -412,12 +410,12 @@ function Rehabilitation() {
   );
 }
 
-export default function RehabilitationPage() {
+export default function NeurologyPage() {
   return (
     <>
       <Header />
       <main>
-        <Rehabilitation />
+        <Neurology />
       </main>
       <Footer />
     </>

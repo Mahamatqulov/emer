@@ -24,17 +24,20 @@
       "dept_Urology": "Urology",
       "dept_Cardiology": "Cardiology",
       "dept_Gynecology": "Gynecology",
-      "dept_Rehabilitation": "Rehabilitation",
+      "dept_Rehabilitation": "2-Therapy",
       "dept_PediatricSurgery": "Pediatric Surgery",
       "dept_PediatricICU": "Pediatric ICU",
       "dept_IntensiveCare": "Intensive Care Unit",
       "dept_Surgery2": "Surgery 2",
-      "dept_Administration": "Administration"
+      "dept_Administration": "Administration",
+      "dept_Laboratory": "Laboratory",
+      "dept_Neurology": "Neurology",
+      "dept_Pharmacy": "Pharmacy"
     },
     "hero": {
       "title": "Republic Emergency Medical Aid Scientific Center Fergana Branch",
       "subtitle": "Premier emergency medical services with cutting-edge technology and highly qualified medical specialists. Available 24/7 for your health and well-being.",
-      "cta": "+998 73 244 19 63"
+      "cta": "+998 73 244 92 11"
     },
     "stats": {
       "patients": "50,000+",
@@ -96,17 +99,20 @@
       "dept_Urology": "Урология",
       "dept_Cardiology": "Кардиология",
       "dept_Gynecology": "Гинекология",
-      "dept_Rehabilitation": "Реабилитация",
+      "dept_Rehabilitation": "2-Терапия",
       "dept_PediatricSurgery": "Детская хирургия",
       "dept_PediatricICU": "Детская реанимация",
       "dept_IntensiveCare": "Реанимация и интенсивная терапия",
       "dept_Surgery2": "Хирургия-2",
-      "dept_Administration": "Администрация"
+      "dept_Administration": "Администрация",
+      "dept_Laboratory": "Лаборатория",
+      "dept_Neurology": "Неврология",
+      "dept_Pharmacy": "Аптека"
     },
     "hero": {
       "title": "Республиканский научный центр экстренной медицинской помощи, филиал Фергона",
       "subtitle": "Передовые услуги скорой помощи с инновационными технологиями и высококвалифицированными медицинскими специалистами. Доступны 24/7 для вашего здоровья и благополучия.",
-      "cta": "+998 73 244 19 63"
+      "cta": "+998 73 244 92 11"
     },
     "stats": {
       "patients": "50,000+",
@@ -168,17 +174,20 @@
       "dept_Urology": "Urologiya",
       "dept_Cardiology": "Kardiologiya",
       "dept_Gynecology": "Ginekologiya",
-      "dept_Rehabilitation": "Reabilitatsiya",
+      "dept_Rehabilitation": "2-Terapiya",
       "dept_PediatricSurgery": "Bolalar jarrohligi",
       "dept_PediatricICU": "Bolalar reanimatsiyasi",
       "dept_IntensiveCare": "Reanimatsiya va intensiv terapiya",
       "dept_Surgery2": "2-Jarrohlik",
-      "dept_Administration": "Ma’muriyat"
+      "dept_Administration": "Ma’muriyat",
+      "dept_Laboratory": "Laboratoriya",
+      "dept_Neurology": "Nevrologiya",
+      "dept_Pharmacy": "Dorixona"
     },
     "hero": {
       "title": "Respublika Shoshilinch Tibbiy Yordam Ilmiy Markazi Farg'ona Filiali",
       "subtitle": "Ilg‘or tibbiy texnologiyalar va yuqori malakali mutaxassislar bilan shoshilinch tibbiy yordamning zamonaviy xizmatlarini taqdim etamiz. Sizning sog‘lig‘ingiz va xavfsizligingiz uchun 24 soat, haftaning 7 kuni uzluksiz xizmat ko‘rsatamiz.",
-      "cta": "+998 73 244 19 63"
+      "cta": "+998 73 244 92 11"
     },
     "stats": {
       "patients": "50,000+",

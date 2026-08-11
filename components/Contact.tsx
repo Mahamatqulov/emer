@@ -15,7 +15,7 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Tezkor aloqa",
-    value: "+998 73 244 19 63\n24 soat, haftaning 7 kuni",
+    value: "+998 73 244 92 11\n24 soat, haftaning 7 kuni",
   },
   {
     icon: Mail,

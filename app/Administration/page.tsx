@@ -24,7 +24,7 @@ const director = {
   photo:
     "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop",
   email: "direktor@fstb.uz",
-  phone: "+998 73 244 00 00",
+  phone: "+998 73 244 92 11",
 };
 
 const leaders = [
@@ -36,7 +36,7 @@ const leaders = [
     photo:
       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop",
     email: "tibbiy@fstb.uz",
-    phone: "+998 73 244 00 01",
+    phone: "+998 73 244 92 11",
     reception: "Dushanba, Chorshanba 14:00–17:00",
   },
   {
@@ -47,7 +47,7 @@ const leaders = [
     photo:
       "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop",
     email: "moliya@fstb.uz",
-    phone: "+998 73 244 00 02",
+    phone: "+998 73 244 92 11",
     reception: "Seshanba, Payshanba 10:00–13:00",
   },
   {
@@ -58,7 +58,7 @@ const leaders = [
     photo:
       "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=800&auto=format&fit=crop",
     email: "hamshira@fstb.uz",
-    phone: "+998 73 244 00 03",
+    phone: "+998 73 244 92 11",
     reception: "Har kuni 09:00–12:00",
   },
   {
@@ -69,7 +69,7 @@ const leaders = [
     photo:
       "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop",
     email: "sifat@fstb.uz",
-    phone: "+998 73 244 00 04",
+    phone: "+998 73 244 92 11",
     reception: "Dushanba, Juma 13:00–16:00",
   },
   {
@@ -80,7 +80,7 @@ const leaders = [
     photo:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
     email: "kadrlar@fstb.uz",
-    phone: "+998 73 244 00 05",
+    phone: "+998 73 244 92 11",
     reception: "Har kuni 09:00–13:00",
   },
   {
@@ -91,7 +91,7 @@ const leaders = [
     photo:
       "https://images.unsplash.com/photo-1618498082410-b4aa22193b38?q=80&w=800&auto=format&fit=crop",
     email: "fvv@fstb.uz",
-    phone: "+998 73 244 00 06",
+    phone: "+998 73 244 92 11",
     reception: "Seshanba, Payshanba 14:00–17:00",
   },
 ];

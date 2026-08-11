@@ -4,78 +4,98 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { motion, easeOut, Variants } from "framer-motion";
 import {
-  Brain,
-  Activity,
-  Dumbbell,
-  Wind,
-  MessageCircle,
-  Baby,
-  TrendingUp,
+  Microscope,
+  TestTube,
+  FlaskConical,
+  Dna,
+  Droplet,
+  ClipboardList,
   Timer,
-  ClipboardCheck,
+  ShieldCheck,
   PhoneCall,
   ArrowRight,
 } from "lucide-react";
 
-const procedures = [
+const vials = [
+  { level: 0.7, label: "Hb" },
+  { level: 0.42, label: "Glu" },
+  { level: 0.85, label: "WBC" },
+  { level: 0.55, label: "CRP" },
+  { level: 0.3, label: "Cr" },
+  { level: 0.68, label: "K+" },
+];
+
+const readouts = [
+  { param: "Gemoglobin", value: "142 g/L", norm: "130–160", status: "norma" },
+  { param: "Glyukoza", value: "5.1 mmol/L", norm: "3.9–5.6", status: "norma" },
   {
-    icon: Brain,
-    title: "Nevrologik reabilitatsiya",
-    desc: "Insult va bosh miya jarohatlaridan keyingi funksiyalarni tiklash.",
+    param: "Leykotsitlar",
+    value: "11.2 ×10⁹/L",
+    norm: "4.0–9.0",
+    status: "yuqori",
+  },
+  { param: "CRP", value: "8 mg/L", norm: "0–5", status: "yuqori" },
+];
+
+const services = [
+  {
+    icon: Droplet,
+    title: "Umumiy qon tahlili",
+    desc: "Gemogramma, leykoformula va tez natija chiqarish tizimi.",
   },
   {
-    icon: Activity,
-    title: "Jarrohlikdan keyingi tiklanish",
-    desc: "Operatsiyadan so‘ng tez va xavfsiz tiklanish dasturlari.",
+    icon: FlaskConical,
+    title: "Biokimyoviy tahlillar",
+    desc: "Jigar, buyrak funksiyasi va metabolik ko‘rsatkichlarni baholash.",
   },
   {
-    icon: Dumbbell,
-    title: "Harakat apparati reabilitatsiyasi",
-    desc: "Suyak-mushak tizimi shikastlanishlaridan keyingi mashqlar dasturi.",
+    icon: Dna,
+    title: "Molekulyar-genetik (PCR)",
+    desc: "Yuqumli va irsiy kasalliklarni molekulyar darajada aniqlash.",
   },
   {
-    icon: Wind,
-    title: "Nafas reabilitatsiyasi",
-    desc: "O‘pka funksiyasini tiklashga qaratilgan nafas mashqlari.",
+    icon: Microscope,
+    title: "Mikrobiologik tahlillar",
+    desc: "Infeksiya qo‘zg‘atuvchilarini aniqlash va antibiotikga sezgirlik.",
   },
   {
-    icon: MessageCircle,
-    title: "Nutq va yutish reabilitatsiyasi",
-    desc: "Nutq buzilishlari va yutish funksiyasini tiklash mashg‘ulotlari.",
+    icon: TestTube,
+    title: "Gormonal tekshiruvlar",
+    desc: "Endokrin tizim faoliyatini keng ko‘rsatkichlar asosida tahlil qilish.",
   },
   {
-    icon: Baby,
-    title: "Bolalar reabilitatsiyasi",
-    desc: "Rivojlanish va harakat buzilishlarida bolalarga ixtisoslashgan yordam.",
+    icon: ClipboardList,
+    title: "Shoshilinch tahlillar (STAT)",
+    desc: "Reanimatsiya va operatsiya oldi holatlar uchun tezkor natija.",
   },
 ];
 
 const phases = [
   {
-    tag: "01 / Baholash",
-    title: "Boshlang‘ich diagnostika",
+    tag: "01 / Namuna",
+    title: "Qon va biomaterial olish",
     points: [
-      "Funksional holatni baholash",
-      "Harakat diapazonini o‘lchash",
-      "Individual reja tuzish",
+      "Steril sharoitda namuna olish",
+      "Avtomatik markirovka tizimi",
+      "Namunani darhol laboratoriyaga yetkazish",
     ],
   },
   {
-    tag: "02 / Reabilitatsiya",
-    title: "Faol mashg‘ulotlar",
+    tag: "02 / Tahlil",
+    title: "Avtomatlashtirilgan analiz",
     points: [
-      "Fizioterapiya va mashqlar",
-      "Progressni muntazam kuzatuv",
-      "Multidisiplinar yondashuv",
+      "Yuqori aniqlikdagi analizatorlar",
+      "Ikki bosqichli sifat nazorati",
+      "Shoshilinch holatlar uchun tezlashtirilgan protokol",
     ],
   },
   {
-    tag: "03 / Keyin",
-    title: "Mustahkamlash",
+    tag: "03 / Natija",
+    title: "Xulosa va tavsiya",
     points: [
-      "Uy sharoitida mashqlar dasturi",
-      "Davriy nazorat tekshiruvlari",
-      "Kundalik hayotga qaytish",
+      "Elektron shaklda natija topshirish",
+      "Shifokor bilan izohli konsultatsiya",
+      "Arxivlangan tahlil tarixi",
     ],
   },
 ];
@@ -86,95 +106,78 @@ const fadeUp: Variants = {
 };
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
-const R = 90;
-const CIRC = 2 * Math.PI * R;
-
-function ProgressRingPanel() {
+function AnalysisPanel() {
   return (
     <div className="relative rounded-2xl border border-background/10 bg-black/40 overflow-hidden">
       <div className="flex items-center justify-between px-6 pt-5">
         <span className="font-mono text-xs tracking-[0.2em] text-white/50 uppercase">
-          Tiklanish jarayoni monitoringi
+          Namuna tahlili — real vaqt
         </span>
         <span className="flex items-center gap-2 text-xs font-mono text-[#7DD3FC]">
-          <TrendingUp className="h-3.5 w-3.5" />
-          progressda
+          <FlaskConical className="h-3.5 w-3.5" />
+          skanerlanmoqda
         </span>
       </div>
 
-      <div className="grid md:grid-cols-[1fr_260px]">
-        <div className="relative h-[280px] flex items-center justify-center">
-          <svg viewBox="0 0 300 280" className="w-full h-full">
-            <circle
-              cx={150}
-              cy={140}
-              r={R}
-              fill="none"
-              stroke="#ffffff"
-              strokeOpacity={0.1}
-              strokeWidth={14}
-            />
-            <motion.circle
-              cx={150}
-              cy={140}
-              r={R}
-              fill="none"
-              stroke="#7DD3FC"
-              strokeWidth={14}
-              strokeLinecap="round"
-              strokeDasharray={CIRC}
-              transform="rotate(-90 150 140)"
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 0.72 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.6, ease: "easeOut" }}
-            />
-            <text
-              x={150}
-              y={132}
-              fill="#ffffff"
-              fontSize={38}
-              fontWeight={700}
-              textAnchor="middle"
-              fontFamily="monospace"
+      <div className="grid md:grid-cols-[1fr_280px]">
+        <div className="relative h-[280px] flex items-end justify-center gap-6 px-8 pb-8 pt-10 overflow-hidden">
+          <motion.div
+            className="pointer-events-none absolute inset-y-0 w-24"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, color-mix(in srgb, #7DD3FC 18%, transparent), transparent)",
+            }}
+            initial={{ left: "-10%" }}
+            animate={{ left: ["-10%", "110%"] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: "linear" }}
+          />
+          {vials.map((v, i) => (
+            <div
+              key={v.label}
+              className="relative w-9 h-[190px] rounded-b-xl rounded-t-md border border-white/15 bg-white/[0.03] overflow-hidden flex flex-col justify-end"
             >
-              72%
-            </text>
-            <text
-              x={150}
-              y={158}
-              fill="#ffffff"
-              fillOpacity={0.4}
-              fontSize={11}
-              textAnchor="middle"
-              fontFamily="monospace"
-            >
-              tiklanish darajasi
-            </text>
-          </svg>
+              <motion.div
+                className="w-full"
+                style={{
+                  background:
+                    "linear-gradient(180deg, #7DD3FC, color-mix(in srgb, #7DD3FC 40%, transparent))",
+                }}
+                initial={{ height: 0 }}
+                whileInView={{ height: `${v.level * 100}%` }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, delay: i * 0.1, ease: easeOut }}
+              />
+              <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-white/40">
+                {v.label}
+              </span>
+            </div>
+          ))}
         </div>
 
-        <div className="border-t md:border-t-0 md:border-l border-background/10 px-6 py-5 font-mono text-xs text-white/60 space-y-3">
-          <div className="flex justify-between">
-            <span className="text-white/40">Boshlang‘ich baho</span>
-            <span>34%</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-white/40">Joriy ko‘rsatkich</span>
-            <span className="text-[#7DD3FC]">72%</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-white/40">Maqsad</span>
-            <span>90%</span>
-          </div>
+        <div className="border-t md:border-t-0 md:border-l border-background/10 px-6 py-5 font-mono text-[11px] text-white/60 space-y-3">
+          {readouts.map((r) => (
+            <div
+              key={r.param}
+              className="flex items-center justify-between gap-2"
+            >
+              <span className="text-white/40 truncate">{r.param}</span>
+              <span
+                className={
+                  r.status === "yuqori" ? "text-amber-400" : "text-[#7DD3FC]"
+                }
+              >
+                {r.value}
+              </span>
+            </div>
+          ))}
           <div className="h-px bg-white/10 my-3" />
           <div className="flex justify-between">
-            <span className="text-white/40">Bosqich</span>
-            <span className="text-[#7DD3FC]">faol davolash</span>
+            <span className="text-white/40">Namunalar</span>
+            <span>6 / 6 tayyor</span>
           </div>
           <div className="flex justify-between">
             <span className="text-white/40">Holat</span>
-            <span className="text-[#7DD3FC]">ijobiy dinamika</span>
+            <span className="text-[#7DD3FC]">tasdiqlangan</span>
           </div>
         </div>
       </div>
@@ -182,13 +185,10 @@ function ProgressRingPanel() {
   );
 }
 
-function Rehabilitation() {
+function Laboratory() {
   return (
     <div className="bg-background text-white">
-      <section
-        id="rehabilitation"
-        className="relative overflow-hidden pt-40 pb-20"
-      >
+      <section id="laboratory" className="relative overflow-hidden pt-40 pb-20">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.04]"
           style={{
@@ -218,32 +218,31 @@ function Rehabilitation() {
             >
               <span className="h-px w-8 bg-gradient-to-r from-accent to-transparent" />
               <span className="font-mono text-xs tracking-[0.2em] text-accent uppercase">
-                Reabilitatsiya blok
+                Diagnostika bloki
               </span>
             </motion.div>
             <motion.h1
               variants={fadeUp}
               className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]"
             >
-              2-Terapiya bo‘limi
+              Laboratoriya bo‘limi
             </motion.h1>
             <motion.p
               variants={fadeUp}
               className="text-lg text-white/70 leading-8 max-w-2xl"
             >
-              Kasallik yoki jarohatdan so‘ng bemorning funksional
-              qobiliyatlarini individual dastur asosida bosqichma-bosqich
-              tiklaydigan ixtisoslashtirilgan bo‘lim.
+              Zamonaviy avtomatlashtirilgan analizatorlar va qat’iy sifat
+              nazorati asosida ishlaydigan, shoshilinch va rejali tahlillarni
+              qamrab oluvchi laboratoriya xizmati.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-9 flex flex-wrap gap-4">
               <a
                 href="/#contact"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-transform hover:scale-[1.02]"
               >
-                Konsultatsiyaga yozilish
+                Tahlil topshirish
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
-
               <a
                 href="tel:1050"
                 className="inline-flex items-center gap-2 rounded-full border border-background/20 px-6 py-3 text-sm font-medium hover:bg-background/10 transition-colors"
@@ -261,7 +260,7 @@ function Rehabilitation() {
             variants={stagger}
             className="mt-20"
           >
-            <ProgressRingPanel />
+            <AnalysisPanel />
           </motion.div>
         </div>
       </section>
@@ -277,30 +276,33 @@ function Rehabilitation() {
           >
             <div className="max-w-xl">
               <span className="font-mono text-xs tracking-[0.2em] text-accent uppercase">
-                Yo‘nalishlar
+                Xizmatlar
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mt-3">
-                Qanday holatlarni davolaymiz
+                Qanday tahlillarni bajaramiz
               </h2>
             </div>
+            <span className="hidden md:block text-xs font-mono text-white/40 shrink-0">
+              → yon tomonga suring
+            </span>
           </motion.div>
         </div>
         <div className="max-w-7xl mx-auto pl-4">
           <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 pr-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            {procedures.map((p) => (
+            {services.map((s) => (
               <div
-                key={p.title}
+                key={s.title}
                 className="snap-start shrink-0 w-[260px] rounded-2xl border border-white/10 bg-black p-6 relative overflow-hidden shadow-lg hover:shadow-2xl hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
               >
                 <span className="absolute top-0 left-6 h-px w-10 bg-accent/60" />
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 mb-5">
-                  <p.icon
+                  <s.icon
                     className="h-5.5 w-5.5 text-accent"
                     strokeWidth={1.5}
                   />
                 </span>
-                <h3 className="font-semibold mb-2">{p.title}</h3>
-                <p className="text-sm text-white/60 leading-6">{p.desc}</p>
+                <h3 className="font-semibold mb-2">{s.title}</h3>
+                <p className="text-sm text-white/60 leading-6">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -317,10 +319,10 @@ function Rehabilitation() {
             className="max-w-2xl mb-14"
           >
             <span className="font-mono text-xs tracking-[0.2em] text-accent uppercase">
-              Davolash yo‘li
+              Jarayon
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mt-3">
-              Bemor uchun uchta bosqich
+              Namunadan natijagacha
             </h2>
           </motion.div>
           <motion.div
@@ -360,12 +362,12 @@ function Rehabilitation() {
       <section className="py-16 border-t border-background/10">
         <div className="max-w-7xl mx-auto px-4 grid sm:grid-cols-3 gap-8">
           {[
-            { icon: Timer, label: "Individual reabilitatsiya jadvali" },
-            { icon: TrendingUp, label: "Progressni muntazam kuzatuv" },
+            { icon: Timer, label: "24/7 shoshilinch tahlillar" },
             {
-              icon: ClipboardCheck,
-              label: "Multidisiplinar mutaxassislar jamoasi",
+              icon: Microscope,
+              label: "Zamonaviy avtomatlashtirilgan uskunalar",
             },
+            { icon: ShieldCheck, label: "Ikki bosqichli sifat nazorati" },
           ].map((t) => (
             <div key={t.label} className="flex items-center gap-3">
               <t.icon
@@ -390,14 +392,13 @@ function Rehabilitation() {
             />
             <div className="relative">
               <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                Reabilitatsiya rejasi kerakmi?
+                Tahlil topshirish kerakmi?
               </h2>
               <p className="text-white/60 max-w-xl">
-                Mutaxassislarimiz bilan bog‘laning — holatingizga mos individual
-                dastur tuzib beramiz.
+                Laboratoriyamiz bilan bog‘laning — kerakli tahlillarni tanlab,
+                navbatga yozilamiz.
               </p>
             </div>
-
             <a
               href="tel:1050"
               className="relative inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-accent-foreground shrink-0"
@@ -412,12 +413,12 @@ function Rehabilitation() {
   );
 }
 
-export default function RehabilitationPage() {
+export default function LaboratoryPage() {
   return (
     <>
       <Header />
       <main>
-        <Rehabilitation />
+        <Laboratory />
       </main>
       <Footer />
     </>
